@@ -1,0 +1,8 @@
+{
+   "scope": "source.js",
+
+   "completions":
+   [
+      { "trigger": "zzz", "contents": "'''\n${1:TODO DOC HERE}\n'''" }
+   ]
+}
