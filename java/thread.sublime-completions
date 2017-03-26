@@ -1,0 +1,12 @@
+{
+   "scope": "source.java",
+
+   "completions":
+   [
+      /**循环控制**/
+      { "trigger": "Thread.currentThread", "contents": "Thread.currentThread();\n" },
+      { "trigger": "thread.启动线程Runable方式", "contents": "//构造参数必须实现Runnable接口\nThread thread = new Thread(${1:Runnable的实现类对象});\nthread.start();//线程启动" },
+     
+
+   ]
+}

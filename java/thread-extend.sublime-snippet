@@ -1,6 +1,11 @@
 <snippet>
     <content><![CDATA[
 public class ${1:ThreadName} extends  Thread{
+
+    public ${1:ThreadName}(String name) {
+        super(name);
+    }
+
     @Override
     public void run() {
         ${2://TODO 线程内的逻辑}
@@ -11,5 +16,5 @@ public class ${1:ThreadName} extends  Thread{
     ]]></content>
     <tabTrigger>thread-extend</tabTrigger>
     <scope>source.java</scope>
-    <description>继承方式创建线程</description>
+    <description>创建线程</description>
 </snippet>
