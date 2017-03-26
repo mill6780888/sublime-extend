@@ -1,0 +1,23 @@
+{
+   "scope": "source.python",
+
+   "completions":
+   [
+      { "trigger": "file-head", "contents": "#!/usr/bin/python\n# -*- coding: UTF-8 -*-\n" },
+      { "trigger": "comment-more", "contents": "\"\"\"\n  ${1:这里是多行文本描述}\n\"\"\"\n" },
+      { "trigger": "ifelse", "contents": "if ${1:expression} : \n   ${3:TODO} \nelif ${2:expression} :  \n   ${4:TODO}  \nelse :  \n   ${5:TODO} " },
+      { "trigger": "foreach-let", "contents": "for (let i in ${1:obj}) {\n	console.log(${1:obj}[i]);\n};" },
+      /**消息输出和打印**/
+      { "trigger": "log", "contents": "console.log(${1:content});" },
+      { "trigger": "error", "contents": "console.error(${1:content});" },
+      { "trigger": "warn", "contents": "console.warn(${1:content});" },
+      { "trigger": "info", "contents": "console.info(${1:content});" },
+      { "trigger": "alert", "contents": "alert(${1:message});" },
+      /**声明一个let的多变量*/
+      { "trigger": "del", "contents": "del ${1:要删除的变量名}" },
+      { "trigger": "substring", "contents": "${2:${1:b} = }${3:被截取的字符串}[${4:开始位置}:${5:结束位置}]" },
+      { "trigger": "let-more", "contents": "${1:变量一}, ${3:变量二}, ${5:变量三} = ${2:值一}, ${4:值二}, ${6:值三}" },
+      { "trigger": "list", "contents": "${1:listname} = [${2:元素1},${3:元素2}]" },
+      { "trigger": "yuanzu", "contents": "${1:tuplename} = (${2:元素1},${3:元素2})" }
+   ]
+}

@@ -1,9 +1,11 @@
 {
-   "scope": "source.js",
+   "scope": "source.java",
 
    "completions":
    [
-      { "trigger": "let", "contents": "let ${1:var_name} = ${2:var_value};" },
+      /**循环控制**/
+      { "trigger": "for", "contents": "for (int i=0; i<${1:max}; i++) {\n  ${2://TODO 循环逻辑}\n}\n" },
+     
       { "trigger": "const", "contents": "const ${1:var_name} = ${2:var_value};" },
       { "trigger": "for-let", "contents": "for (let i = 0; i < ${1:Things}.length; i++) {\n	${1:Things}[i]\n};" },
       { "trigger": "foreach-let", "contents": "for (let i in ${1:obj}) {\n	console.log(${1:obj}[i]);\n};" },
