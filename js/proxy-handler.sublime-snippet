@@ -1,0 +1,25 @@
+<snippet>
+	<content><![CDATA[
+	let handler = {
+	  get: function(target, name) {
+	    if (name === 'prototype') {
+	      return Object.prototype;
+	    }
+	    return 'Hello, ' + name;
+	  },
+
+	  apply: function(target, thisBinding, args) {
+	    return args[0];
+	  },
+
+	  construct: function(target, args) {
+	    return {value: args[1]};
+	  }
+	};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>proxy-handler</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.js</scope>
+	<description>代理的处理对象</description>
+</snippet>

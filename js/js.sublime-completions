@@ -3,6 +3,17 @@
 
    "completions":
    [
-      { "trigger": "zzz", "contents": "'''\n${1:TODO DOC HERE}\n'''" }
+      { "trigger": "let", "contents": "let ${1:var_name} = ${2:var_value};" },
+      { "trigger": "const", "contents": "const ${1:var_name} = ${2:var_value};" },
+      { "trigger": "for-let", "contents": "for (let i = 0; i < ${1:Things}.length; i++) {\n	${1:Things}[i]\n};" },
+      { "trigger": "foreach-let", "contents": "for (let i in ${1:obj}) {\n	console.log(${1:obj}[i]);\n};" },
+      /**消息输出和打印**/
+      { "trigger": "log", "contents": "console.log(${1:content});" },
+      { "trigger": "error", "contents": "console.error(${1:content});" },
+      { "trigger": "warn", "contents": "console.warn(${1:content});" },
+      { "trigger": "info", "contents": "console.info(${1:content});" },
+      { "trigger": "alert", "contents": "alert(${1:message});" },
+      /**声明一个let的多变量*/
+      { "trigger": "let-more", "contents": "let [\n		${1:变量一}, \n		${3:变量二}, \n		${5:变量三}\n	] = \n	[\n		${2:值一}, \n		${4:值二}, \n		${6:值三}\n	];\n" }
    ]
 }
