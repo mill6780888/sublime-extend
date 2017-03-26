@@ -1,21 +1,21 @@
 <snippet>
 	<content><![CDATA[
-	let handler = {
-	  get: function(target, name) {
-	    if (name === 'prototype') {
-	      return Object.prototype;
-	    }
-	    return 'Hello, ' + name;
-	  },
+let handler = {
+  get: function(target, name) {
+    if (name === 'prototype') {
+      return target.prototype;
+    }
+    return target.name||null;
+  },
 
-	  apply: function(target, thisBinding, args) {
-	    return args[0];
-	  },
+  apply: function(target, thisBinding, args) {
+    return args[0];
+  },
 
-	  construct: function(target, args) {
-	    return {value: args[1]};
-	  }
-	};
+  construct: function(target, args) {
+    return {value: args[1]};
+  }
+};
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>proxy-handler</tabTrigger>
