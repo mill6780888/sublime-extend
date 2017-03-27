@@ -1,0 +1,12 @@
+{
+   "scope": "source.java",
+
+   "completions":
+   [
+      /**循环控制**/
+      { "trigger": "BeanUtils.cloneBean", "contents": "Object o = BeanUtils.cloneBean(${1:bean});" },
+      { "trigger": "BeanUtils.拷贝属性", "contents": "BeanUtils.copyProperties(${1:目标对象},${2:源对象});" },
+     
+
+   ]
+}

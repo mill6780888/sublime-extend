@@ -1,0 +1,24 @@
+{
+   "scope": "source.java",
+
+   "completions":
+   [
+      /**word**/
+      { "trigger": "wordUtils.截取字符串", "contents": "String ${1:str} = WordUtils.abbreviate ( ${2:被截取的字符串}, ${3:截取位数}, ${4:截取上限}, ${5:追加字符串});" },
+      { "trigger": "wordUtils.首字母大写", "contents": "String ${1:str} = WordUtils.capitalize ( ${2:字符串}${3:,char[] 分隔符});" },
+      { "trigger": "wordUtils.首字母大写其余小写", "contents": "String ${1:str} = WordUtils.capitalizeFully ( ${2:字符串}${3:,char[] 分隔符});" },
+      { "trigger": "wordUtils.每个单词首字母", "contents": "String ${1:str} = WordUtils.initials ( ${2:字符串}${3:,char[] 分隔符});" },
+      { "trigger": "wordUtils.首字母小写", "contents": "String ${1:str} = WordUtils.uncapitalize ( ${2:字符串}${3:,char[] 分隔符});" },
+      { "trigger": "wordUtils.大小写转换", "contents": "String ${1:str} = WordUtils.swapCase ( ${2:字符串});" },
+      /**Array**/
+      { "trigger": "ArrayUtils.toString支持多维", "contents": "String ${1:arrStr} = ArrayUtils.toString ( ${2:数组}${3:,strIfNull});" },
+      { "trigger": "ArrayUtils.hashCode支持多维", "contents": "int ${1:arrStr} = ArrayUtils.hashCode ( ${2:数组}${3:,strIfNull});//空数组返回0" },
+      { "trigger": "ArrayUtils.equal比较数组", "contents": "boolean ${1:isEquals} = ArrayUtils.isEquals ( ${2:数组1},${3:数组2});" },
+      { "trigger": "ArrayUtils.add添加元素", "contents": "${1:Object[] 对应类型数组变量} = ArrayUtils.add ( ${2:任意类型数组}${3:,添加的位置},${4:添加的元素});" },
+      { "trigger": "ArrayUtils.toMap", "contents": "Map ${1:arrMap} = ArrayUtils.toMap ( ${2:Object[][]多维数组});" },
+      { "trigger": "ArrayUtils.clone", "contents": "${1:Object[] 对应类型数组变量} = ArrayUtils.clone ( ${2:任意类型数组});" },
+
+     
+
+   ]
+}
