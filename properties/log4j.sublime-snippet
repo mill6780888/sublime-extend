@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+log4j.appender.fileout=org.apache.log4j.RollingFileAppender
+log4j.appender.fileout.File=customerLogs/customer-log.log
+log4j.appender.fileout.Encoding=UTF-8
+log4j.appender.fileout.MaxFileSize=1024KB
+]]></content>
+    <tabTrigger>log4j.conf</tabTrigger>
+    <scope>text.properties</scope>
+    <description>New Property</description>
+</snippet>

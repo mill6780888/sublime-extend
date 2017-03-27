@@ -1,0 +1,26 @@
+{
+   "scope": "source.js",
+
+   "completions":
+   [
+      { "trigger": "gulp.src", "contents": "gulp.src([${1:'client/templates/*.jade'}],${2:{\n   buffer:true,\n read:true,\n   base:\"${3:client写出时替换掉的部分}\"\n} })" },
+      { "trigger": "gulp.file.isBuffer", "contents": "${1:file}.isBuffer();" },
+      { "trigger": "gulp.file.isStream", "contents": "${1:file}.isStream();" },
+      { "trigger": "gulp.file.isNull", "contents": "${1:file}.isNull();" },
+      { "trigger": "gulp.file.isDirectory", "contents": "${1:file}.isDirectory();" },
+      { "trigger": "gulp.file.是否符号链接", "contents": "${1:file}.isSymbolic();" },
+      { "trigger": "gulp.file.contents", "contents": "${1:file}.contents;" },
+      { "trigger": "gulp.file.cwd", "contents": "${1:file}.cwd;" },
+      { "trigger": "gulp.file.base", "contents": "${1:file}.base;//基本路径" },
+      { "trigger": "gulp.file.path", "contents": "${1:file}.path;//绝对路径" },
+      { "trigger": "gulp.file.history", "contents": "${1:file}.history;" },
+      { "trigger": "gulp.file.相对路径", "contents": "${1:file}.relative;" },
+      { "trigger": "gulp.file.dirname", "contents": "${1:file}.dirname;" },
+      { "trigger": "gulp.file.basename", "contents": "${1:file}.basename;" },
+      { "trigger": "gulp.file.文件名无后缀", "contents": "${1:file}.stem;" },
+      { "trigger": "gulp.file.文件后缀", "contents": "${1:file}.extname;" },
+      { "trigger": "gulp.file.symlink", "contents": "${1:file}.symlink;" },
+     
+
+   ]
+}
