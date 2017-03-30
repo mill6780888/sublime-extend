@@ -1,0 +1,18 @@
+{
+   "scope": "source.yaml",
+
+   "completions":
+   [
+      { "trigger": "yaml:", "contents": "${1:key}:${2:val}" },
+      { "trigger": "yaml.null", "contents": "~" },
+      { "trigger": "yaml.moreLine保留换行", "contents": "${1:key}: |\n " },
+      { "trigger": "yaml.moreLine不保留换行", "contents": "${1:key}: >\n " },
+      { "trigger": "yaml.moreLine末尾换行", "contents": "${1:key}: |+\n " },
+      { "trigger": "yaml.moreLine不末尾换行", "contents": "${1:key}: |-\n " },
+      { "trigger": "yaml.锚点", "contents": "${1:key}: &${2:alias}" },
+      { "trigger": "yaml.合并引用", "contents": "<<: *${1:alias}" },
+      { "trigger": "yaml.引用", "contents": "${1:key}: *${2:alias}" },
+      { "trigger": "yaml.arr", "contents": "${1:localName}:\n - ${2:value}\n - ${3:value}\n - ${4:value}" },
+      
+   ]
+}
