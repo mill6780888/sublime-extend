@@ -6,13 +6,29 @@
       { "trigger": "file-head", "contents": "#!/usr/bin/python\n# -*- coding: UTF-8 -*-\n" },
       { "trigger": "comment-more", "contents": "\"\"\"\n  ${1:这里是多行文本描述}\n\"\"\"\n" },
       { "trigger": "ifelse", "contents": "if ${1:expression} : \n   ${3:TODO} \nelif ${2:expression} :  \n   ${4:TODO}  \nelse :  \n   ${5:TODO} " },
-      { "trigger": "foreach-let", "contents": "for (let i in ${1:obj}) {\n	console.log(${1:obj}[i]);\n};" },
-      /**消息输出和打印**/
-      { "trigger": "log", "contents": "console.log(${1:content});" },
-      { "trigger": "error", "contents": "console.error(${1:content});" },
-      { "trigger": "warn", "contents": "console.warn(${1:content});" },
-      { "trigger": "info", "contents": "console.info(${1:content});" },
-      { "trigger": "alert", "contents": "alert(${1:message});" },
+
+      { "trigger": "while", "contents": "while (${1:true}):\n   ${2://TODO }" },
+   
+      /*数据类型转换*/
+      { "trigger": "convert-int", "contents": "${1:var}=int(${2:x} ${3:[,base]})#   将x转换为一个整数" },
+      { "trigger": "convert-long", "contents": "${1:var}=long(${2:x} ${3:[,base]} )#   将x转换为一个长整数" },
+      { "trigger": "convert-float", "contents": "${1:var}=float(${2:x})#   将x转换到一个浮点数" },
+      { "trigger": "convert-complex", "contents": "${1:var}=complex(${2:real} ${3:[,imag]})# 创建一个复数" },
+      { "trigger": "convert-str", "contents": "${1:var}=str(${2:x})# 将对象 x 转换为字符串" },
+      { "trigger": "convert-repr表达式", "contents": "${1:var}=repr(${2:x})#  将对象 x 转换为表达式字符串" },
+      { "trigger": "convert-eval", "contents": "${1:var}=eval(${2:str})#   用来计算在字符串中的有效Python表达式,并返回一个对象" },
+      { "trigger": "convert-tuple", "contents": "${1:var}=tuple(${2:s})#   将序列 s 转换为一个元组" },
+      { "trigger": "convert-list", "contents": "${1:var}=list(${2:s})#  将序列 s 转换为一个列表" },
+      { "trigger": "convert-set", "contents": "${1:var}=set(${2:s})# 转换为可变集合" },
+      { "trigger": "convert-dict字典", "contents": "${1:var}=dict(${2:d})#  创建一个字典。d 必须是一个序列 (${2:key},${3:value})元组。" },
+      { "trigger": "convert-frozenset不可变集合", "contents": "${1:var}=frozenset(${2:s})# 转换为不可变集合" },
+      { "trigger": "convert-chr字符", "contents": "${1:var}=chr(${2:x})# 将一个整数转换为一个字符" },
+      { "trigger": "convert-unichr-Unicode字符", "contents": "${1:var}=unichr(${2:x})# 将一个整数转换为Unicode字符" },
+      { "trigger": "convert-ord整数", "contents": "${1:var}=ord(${2:x})# 将一个字符转换为它的整数值" },
+      { "trigger": "convert-hex十六进制字符串", "contents": "${1:var}=hex(${2:x})# 将一个整数转换为一个十六进制字符串" },
+      { "trigger": "convert-oct八进制字符串", "contents": "${1:var}=oct(${2:x})# 将一个整数转换为一个八进制字符串" },
+
+
       /**声明一个let的多变量*/
       { "trigger": "del", "contents": "del ${1:要删除的变量名}" },
       { "trigger": "substring", "contents": "${2:${1:b} = }${3:被截取的字符串}[${4:开始位置}:${5:结束位置}]" },
