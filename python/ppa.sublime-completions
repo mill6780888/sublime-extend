@@ -27,6 +27,8 @@
       { "trigger": "convert-ord整数", "contents": "${1:var}=ord(${2:x})# 将一个字符转换为它的整数值" },
       { "trigger": "convert-hex十六进制字符串", "contents": "${1:var}=hex(${2:x})# 将一个整数转换为一个十六进制字符串" },
       { "trigger": "convert-oct八进制字符串", "contents": "${1:var}=oct(${2:x})# 将一个整数转换为一个八进制字符串" },
+      /**函数*/
+      { "trigger": "function-call", "contents": "${1:var=}printme(${2:str = \"My string\"});" },
 
 
       /**声明一个let的多变量*/
