@@ -1,5 +1,5 @@
 {
-   "scope": "source.python",
+   "scope": "source.py",
 
    "completions":
    [
@@ -36,6 +36,74 @@
       { "trigger": "substring", "contents": "${2:${1:b} = }${3:被截取的字符串}[${4:开始位置}:${5:结束位置}]" },
       { "trigger": "let-more", "contents": "${1:变量一}, ${3:变量二}, ${5:变量三} = ${2:值一}, ${4:值二}, ${6:值三}" },
       { "trigger": "list", "contents": "${1:listname} = [${2:元素1},${3:元素2}]" },
-      { "trigger": "yuanzu", "contents": "${1:tuplename} = (${2:元素1},${3:元素2})" }
+      { "trigger": "yuanzu", "contents": "${1:tuplename} = (${2:元素1},${3:元素2})" },
+
+      /*类属性方法*/
+      { "trigger": "class-getattr-访问对象的属性。", "contents": "getattr(${1:obj, name[, default]}) " },
+      { "trigger": "class-hasattr-检查是否存在一个属性。", "contents": "hasattr(${1:obj,name}) " },
+      { "trigger": "class-setattr-设置一个属性。如果属性不存在，会创建一个新属性。", "contents": "setattr(${1:obj,name,value}) " },
+      { "trigger": "class-delattr-删除属性。", "contents": "delattr(${1:obj, name}) " },
+      { "trigger": "class-dict- 类的属性", "contents": "${1:className}.__dict__ " },
+      { "trigger": "class-doc-类的文档字符串", "contents": "${1:className}.__doc__ " },
+      { "trigger": "class-name-类名", "contents": "${1:className}.__name__" },
+      { "trigger": "class-module-所在的模块", "contents": "${1:className}.__module__" },
+      { "trigger": "class-bases-类的所有父类构成元素", "contents": "${1:className}.__bases__ " },
+      { "trigger": "class-issubclass-是否子类", "contents": "issubclass(${1:sub},${2:sup})" },
+      { "trigger": "class-isinstance-是否实例", "contents": "isinstance(${1:obj},${2:Class})" },
+      { "trigger": "class-访问私有属性", "contents": "object._${1:className}__${2:attrName}" },
+
+
+      { "trigger": "regexp-flags-re.I-大小写不敏感", "contents": "${1:re.I}" },
+      { "trigger": "regexp-flags-re.L-本地化识别", "contents": "${1:re.L}" },
+      { "trigger": "regexp-flags-re.M-多行匹配", "contents": "${1:re.M}" },
+      { "trigger": "regexp-flags-re.S-.包括换行", "contents": "${1:re.S}" },
+      { "trigger": "regexp-flags-re.U-Unicode", "contents": "${1:re.U}" },
+      { "trigger": "regexp-flags-re.X-灵活的格式", "contents": "${1:re.X}" },
+
+      { "trigger": "regexp-group-获取结果", "contents": "${1:regResult}.group(${2:1,2})" },
+      { "trigger": "regexp-match-正则开始匹配", "contents": "${1:regResult}=re.match(${2:pattern}, ${3:string}, ${4:flags=0})" },
+      { "trigger": "regexp-search-正则全文匹配", "contents": "${1:regResult}=re.search(${2:pattern}, ${3:string}, ${4:flags=0})" },
+      { "trigger": "regexp-sub-正则替换", "contents": "${1:regResult}=re.sub(${2:pattern}, ${3:new-str|function}, ${4:old}${5:[,count=0, flags=0]})" },
+
+      { "trigger": "regexp-groups-获取所有结果", "contents": "${1:regResult}.groups()" },
+
+      /*sublime-api*/
+      { "trigger": "sublime-sublime-message-设置状态栏消息", "contents": "sublime.status_message(\"${1:content}\")" },
+      { "trigger": "sublime-sublime-error_message-错误消息", "contents": "sublime.error_message(\"${1:content}\")" },
+      { "trigger": "sublime-sublime-message_dialog-对话框", "contents": "sublime.message_dialog(\"${1:content}\")" },
+      { "trigger": "sublime-sublime-set_timeout-异步", "contents": "sublime.set_timeout(${1:callbacl},${2:5000})" },
+      { "trigger": "sublime-sublime-ok_cancel_dialog-确认框", "contents": "${3:result}=sublime.ok_cancel_dialog(\"${1:content}\", \"yes\")" },
+
+      /**关键字*/
+      { "trigger": "and", "contents": "and" },
+      { "trigger": "exec", "contents": "exec" },
+      { "trigger": "not", "contents": "not" },
+      { "trigger": "assert", "contents": "assert" },
+      { "trigger": "finally", "contents": "finally" },
+      { "trigger": "or", "contents": "or" },
+      { "trigger": "break", "contents": "break" },
+      { "trigger": "for", "contents": "for" },
+      { "trigger": "pass", "contents": "pass" },
+      { "trigger": "class", "contents": "class" },
+      { "trigger": "from", "contents": "from ${1:modname} import ${2:name1[, name2[, ... nameN]]}" },
+      { "trigger": "print", "contents": "print" },
+      { "trigger": "continue", "contents": "continue" },
+      { "trigger": "global全局方法", "contents": "global()" },
+      { "trigger": "raise", "contents": "raise" },
+      { "trigger": "def", "contents": "def" },
+      { "trigger": "if", "contents": "if" },
+      { "trigger": "return", "contents": "return" },
+      { "trigger": "del", "contents": "del" },
+      { "trigger": "import", "contents": "import" },
+      { "trigger": "try", "contents": "try" },
+      { "trigger": "elif", "contents": "elif" },
+      { "trigger": "in", "contents": "in" },
+      { "trigger": "while", "contents": "while" },
+      { "trigger": "else", "contents": "else" },
+      { "trigger": "is", "contents": "is" },
+      { "trigger": "with", "contents": "with" },
+      { "trigger": "except", "contents": "except" },
+      { "trigger": "lambda", "contents": "lambda" },
+      { "trigger": "yield", "contents": "yield" },
    ]
 }

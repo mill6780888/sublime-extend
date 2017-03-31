@@ -1,0 +1,46 @@
+%YAML1.2
+---
+# See http://www.sublimetext.com/docs/3/syntax.html
+file_extensions:
+  - py
+scope: source.py
+contexts:
+  main:
+    # Strings begin and end with quotes, and use backslashes as an escape
+    # character
+    - match: '"'
+      scope: punctuation.definition.string.begin.py
+      push: double_quoted_string
+
+    # Comments begin with a '//' and finish at the end of the line
+    - match: '#'
+      scope: punctuation.definition.comment.py
+      push: line_comment
+
+    # Keywords are if, else for and while.
+    # Note that blackslashes don't need to be escaped within single quoted
+    # strings in YAML. When using single quoted strings, only single quotes
+    # need to be escaped: this is done by using two single quotes next to each
+    # other.
+    - match: '\b(and|exec|not|assert|finally|or|break|for|pass|class|from|print|continue|global|raise|def|if|return|del|import|try|elif|in|while|else|is|with|except|lambda|yield)\b'
+      scope: keyword.control.py
+
+    # Numbers
+    - match: '\b(-)?[0-9.]+\b'
+      scope: constant.numeric.py # Numbers
+
+    - match: '\b\w+\b='
+      scope: variable
+
+  double_quoted_string:
+    - meta_scope: string.quoted.double.py
+    - match: '\\.'
+      scope: constant.character.escape.py
+    - match: '"'
+      scope: punctuation.definition.string.end.py
+      pop: true
+
+  line_comment:
+    - meta_scope: comment.line.py
+    - match: $
+      pop: true

@@ -6,6 +6,6 @@ def ${1:functionname}( ${2:args,name = "mill",*homes} ):
    return ${4:[expression]}
 ]]></content>
     <tabTrigger>function</tabTrigger>
-    <scope>source.python</scope>
+    <scope>source.py</scope>
     <description>创建函数</description>
 </snippet>
