@@ -1,0 +1,186 @@
+set_timeout(callback, delay)	None	延时调用
+status_message(string)	None	设置状态栏消息.
+error_message(string)	None	显示一个error对话框.
+message_dialog(string)	None	显示一个message对话框.
+ok_cancel_dialog(string, <ok_button>)	bool	确认框
+load_settings(base_name)	Settings	载入一个配置
+save_settings(base_name)	None	保存配置。
+windows()	[Window]	打开窗口的列表。
+active_window()	Window	最近使用的一个窗口。
+packages_path()	String	packages目录的路径.
+installed_packages_path()	String	sublime-package文件目录。
+get_clipboard()	String	剪贴板的内容。
+set_clipboard(string)	None	设置剪贴板的内容。
+score_selector(scope, selector)	Int	设置选择器
+run_command(string, <args>)	None	
+log_commands(flag)	None	控制命令的日志
+log_input(flag)	None	控制日志输出。
+version()	String	版本号。
+platform()	String	运行的平台
+arch()	String	CPU架构
+
+
+id()	int	当前view的ID。
+buffer_id()	int	当前view下bufferID。
+file_name()	完整文件名
+name()	String	buffer指定的名称。
+set_name(name)	None	设置buffer的名称。
+is_loading()	bool	如果buffer还在从磁盘载入ture，表示还未准备好给用户使用。
+is_dirty()	bool	是否有未保存到buffer的修改。
+is_read_only()	bool	true，如果buffer不允许修改。
+set_read_only(value)	None	设置缓冲区不可修改。
+is_scratch()	bool	如果缓冲区是临时缓冲区True。临时缓冲区不会报告为dirty。
+set_scratch(value)	None	设置buffer为临时缓冲区。
+settings()	Settings	view的settings对象。settings对象对当前view是私有的。
+window()	Window	持有当前view的window。
+run_command(string, <args>)	None	运行指定的TextCommand，args传入参数。
+size()	int	文件中字符总数量。
+substr(region)	String	region选区内容字符串。
+substr(point)	String	point点的右侧字符。
+begin_edit(<command>, <args>)	Edit	创建一个edit对象，可以划定一组撤销操作，需要对应到 end_edit()标记。
+end_edit(edit)	Edit	标记完成一个edit对象。（译者注：begin_edit到end_edit之间的操作可以当成一个命令分组，可以用于撤销操作。）
+insert(edit, point, string)	int	在缓冲区指定的点插入一个字符串。插入的字符数量；如果插入当前缓冲区的tabs有点区别。
+erase(edit, region)	None	从缓冲区移除region选区内容。
+replace(edit, region, string)	None	把region选区内容替换成指定的字符串。
+sel()	RegionSet	selection(选择)的引用。
+line(point)	Region	point点所在的行。
+line(region)	Region	region区域行头到行尾的一份拷贝，从行头到行尾可能跨了多行（译者注：换行显示的时候，但是中间没有换行符）。
+full_line(point)	Region	同 line()，但是尾部有换行符的时候也包括了换行符。
+full_line(region)	Region	同 line()， 但是尾部有换行符的时候也包括了换行符
+lines(region)	[Region]	region区域的所有行列表 (经过排序) 。
+split_by_newlines(region)	[Region]	用换行符把整个region分割成多个region区域，region列表。
+word(point)	Region	包含point点的单词。
+word(region)	Region	包含region区域的单词区域（从第一个单词的开头，到最后一个单词的末尾）。有可能会跨多个单词。
+find(pattern, fromPosition, <flags>)	Region	匹配的第一个区域，从指定的点位置开始，没有匹配结果None。flags参数可以是 sublime.LITERAL, sublime.IGNORECASE, 或者2个"或运算"。
+find_all(pattern, <flags>, <format>, <extractions>)	[Region]	所有(无重叠)的匹配区域结果。flags参数同上， 如果有format参数，所有匹配结果都会按指定格式被格式化并添加到extractions列表里。
+rowcol(point)	(int, int)	计算指定点从0开始的行位置和列位置。
+text_point(row, col)	int	计算指定行，列位置字符的偏移量。"col"("列")是从一行的行头开始的字符数量。
+set_syntax_file(syntax_file)	None	指定语法文件。view. syntax_file文件应该是按行来定义语法名称，基于Packages/Python/Python.tmLanguage。接受当前语法可以使用view.settings().get('syntax')。
+extract_scope(point)	Region	指定点位置字符语法名称的范围。
+scope_name(point)	String	指定点位置字符的语法名称。
+score_selector(point, selector)	Int	包含指定点位置的选择器(selector)的数量(score)。score为0表示没有匹配, 大于0表示一个匹配，不同的选择器可以通过scope来比较： scope值越高说明这段选区越适合这个选择器。
+find_by_selector(selector)	[Regions]	符合指定选择器的所有区域，结果为一个列表。
+show(point, <show_surrounds>)	None	滚动view到指定的点。
+show(region, <show_surrounds>)	None	滚动view到指定的区域。
+show(region_set, <show_surrounds>)	None	滚动view到可以显示指定的区域集。
+show_at_center(point)	None	滚动到view的中心位置。
+show_at_center(region)	None	滚动view到region区域的中心位置。
+visible_region()	Region	当前view可看见的区域。
+viewport_position()	Vector	可视区域在布局坐标中的偏移量。
+set_viewport_position(vector, <animate<)	None	把可视区域滚动到指定位置。
+viewport_extent()	vector	可视区域宽高。
+layout_extent()	vector	文档layout的宽高。(译者注：layout区域相当于编辑器里写的代码的范围，到代码字符的最后一行和最后一列区域，下同)
+text_to_layout(point)	vector	把文本位置转换成layout位置。
+layout_to_text(vector)	point	layout位置转换成文本位置。
+line_height()	real	layout的行高。
+em_width()	real	范围layout的字符宽度。
+add_regions(key, [regions], scope, <icon>, <flags>)	None	往view里添加这一组区域(region)。如果region已经存在，会被覆盖。 scope参数决定region绘制的颜色，必须是scope名称，比如 "comment" 或者 "string"。如果没有scope参数，region不会被写入。
+icon参数,如果有的话，每个region前面会绘制icon标记。图标的颜色跟scope参数有关。 icon名称可以是：dot、circle,、bookmark,、cross。
+
+可选参数flags可以是下列的组合：
+
+sublime.DRAW_EMPTY. 用竖线绘制空白区域。默认根本不绘制。
+
+sublime.HIDE_ON_MINIMAP. 在minimap不显示这些区域。
+
+sublime.DRAW_EMPTY_AS_OVERWRITE. 用横线绘制空白区域。
+
+sublime.DRAW_OUTLINED. 绘制区域轮廓而不是填充。
+
+sublime.PERSISTENT. 保存区域到会话。
+
+sublime.HIDDEN. 不绘制区域。
+
+get_regions(key)	[regions]	指定key的region。
+erase_regions(key)	None	移除指定key的region
+set_status(key, value)	None	往view里添加状态。value值会被现实在状态栏， 以key排序，每个状态值逗号分隔。value为空字符串将清空改key对应的状态值。
+get_status(key)	String	key对应的状态值。
+erase_status(key)	None	清空key对一个的状态值。
+command_history(index, <modifying_only>)	(String,Dict,int)	undo/redo栈中保存的，命令名称，参数和重复次数。
+Index 为0 对应最近的一次command， -1对应倒数第二次的命令，一次类推。index为正数代表redo 栈中德命令。如果undo / redo历史记录不足够多(None, None, 0) 。
+
+如果modifying_only为True (默认为False) 将只会修改了缓冲区的输入。
+
+fold([regions])	bool	折叠指定区域，如果已经折叠False。
+fold(region)	bool	同上。
+unfold(region)	[regions]	展开对应区域的所有文本，展开的区域。
+unfold([regions])	[regions]	同上。
+encoding()	String	当前文件编码。
+set_encoding(encoding)	None	设置文件编码，文件下一次保存时生效。
+line_endings()	String	当前文件使用的换行符模式。（译者注：windows系统下回"Windows"）
+set_line_endings(line_endings)	None	设置文件的换行符模式，下一次保存时生效。
+
+sublime.RegionSet类
+
+维护一组区域，确保区域间没有重叠。区域的按保存的顺序持有。
+
+方法	值	描述
+clear()	None	移除所有区域。
+add(region)	None	添加指定区域。如果已经存在与该region有交集的区域，会被合并。
+add_all(region_set)	None	添加region_set里的所有区域。
+subtract(region)	None	从所有region中移除指定区域。
+contains(region)	bool	如果所有区域中包含指定的regiontrue。
+
+sublime.Region类
+
+代表了buffer中的一块区域。空白区域可以相等(==)。
+
+构造器	描述
+Region(a, b)	创建一块区域。
+属性	类型	描述
+a	int	region区域的第一个结束位置。（译者注：结束位置是相对于整个文档的第一个开始字符而言。）
+b	int	region区域的第二个结束位置。b可能会比a小，这样的话就相当于一个反转的区域。
+方法	值	描述
+begin()	int	a,b中较小的值。
+end()	int	a,b中较大的值。
+size()	int	区域的字符总数。始终 >= 0。
+empty()	bool	如果begin()==end()，True。
+cover(region)	Region	一个跨越当前region和指定region的一个新的区域。
+intersection(region)	Region	当前region和指定region的交集。
+intersects(region)	bool	如果this==region或者当前region和指定region都包含了一个或多个同样的位置。（译者注：其实就是判断指定的region和当前的region是否有交集）
+contains(region)	bool	如果指定的region是当前region的一个子集True。
+contains(point)	bool	如果begin() <= point <= end()True。（译者注：point点在当前区域范围内）。
+
+sublime.Edit类
+
+Edit对象没有方法，它是用于对buffer的修改进行分组。
+
+可以通过view.begin_edit()来创建。每一个begion_edit()调用都要对应一个view.end_edit()调用。通常会写在try ... finally块内。
+
+方法	值	描述
+(无方法)	
+
+
+sublime.Window类
+
+方法	值	描述
+id()	int	window的ID.
+new_file()	View	创建一个文件。一个空的view，view的is_loaded方法True。
+open_file(file_name, <flags>)	View	打开指定文件，并对应的view。如果文件已经被打开，会切换到当前当前视图。注意，文件载入是异步的，view的is_loading() 方法False前不能对文件进行操作。
+可选参数flags可以是下列的组合：
+
+sublime.ENCODED_POSITION. 指定通过查找文件名后缀:row 或者 :row:col来定位打开文件后定位的位置。
+
+sublime.TRANSIENT. 只作预览打开文件：在修改前不会有文件tab分配。
+
+active_view()	View	当前正在编辑的view。
+active_view_in_group(group)	View	指定组里正在编辑的view。
+views()	[View]	window中所有打开的view。
+views_in_group(group)	[View]	指定组里的所有view。
+num_groups()	int	window中打开的view分组的总数。
+active_group()	int	当前选中组的索引。
+focus_group(group)	None	激活指定分组。
+focus_view(view)	None	切换到指定view。
+get_view_index(view)	(group, index)	view的分组，和在分组里的索引。如果没有-1。
+set_view_index(view, group, index)	None	把view移动到指定分组和指定的索引位置。
+folders()	[String]	当前打开的文件夹列表。（译者注：sublime左侧显示的folders列表的每个跟目录）。
+run_command(string, <args>)	None	运行WindowCommand，传入指定参数。
+show_quick_panel(items, on_done, <flags>)	None	显示一个选择列表中某个选项的快速面板。 on_done会被调用一次，接受选中项的索引为参数。如果快速面板被取消，on_done调用的时候接收的参数为-1。
+Items 可以是字符串数组，或者一个字符串数组的数组(二维字符串数组)。如果是后者，快速面板里的每个条目会显示成多行。
+
+Flags 只能有一个值： sublime.MONOSPACE_FONT
+
+show_input_panel(caption, initial_text, on_done, on_change, on_cancel)	View	显示一个输入面板，收集用户的一行输入。caption是输入框的标题，on_done 和 on_change如果不为空的话需要是一个接受一个字符串的函。on_cancel 是一个无参数的函数。
+get_output_panel(name)	View	view对应的指定名称的输出面板，如果有必要会创建。output面板可以通过运行show_panel( window command)来显示，panel 的名称会加上 "output." 前缀。
+
+

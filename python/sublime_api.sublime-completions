@@ -1,0 +1,9 @@
+{
+   "scope": "source.py",
+
+   "completions":
+   [
+      /*sublimeapi*/
+      { "trigger": "yield", "contents": "yield" },
+   ]
+}
