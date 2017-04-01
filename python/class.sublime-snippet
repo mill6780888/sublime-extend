@@ -1,0 +1,31 @@
+<snippet>
+    <content><![CDATA[
+class ${1:classname}:
+   '所有员工的基类'
+
+   __secretCount = 0  # 私有变量
+   ${2:field} = 0
+   
+   #构造方法,self-实例
+   def __init__(self, name, salary):
+      self.name = name
+      self.salary = salary
+      ${1:classname}.${2:field} += 1
+   
+   def displayCount(self):
+     print "Total ${1:classname} %d" % ${1:classname}.${2:field}
+
+   def displayEmployee(self):
+      print "Name : ", self.name,  ", Salary: ", self.salary
+
+   def __del__(self):
+      class_name = self.__class__.__name__
+      print class_name, "销毁"
+
+   def __str__(self):
+      return 'str(obj)可以获取描述'
+]]></content>
+    <tabTrigger>class</tabTrigger>
+    <scope>source.py</scope>
+    <description>创建一个类</description>
+</snippet>

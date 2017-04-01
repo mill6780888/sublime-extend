@@ -12,8 +12,14 @@
       { "trigger": "error", "contents": "console.error(${1:content});" },
       { "trigger": "warn", "contents": "console.warn(${1:content});" },
       { "trigger": "info", "contents": "console.info(${1:content});" },
+	   { "trigger": "proxy.new", "contents": "var ${1:proxyVal} = new Proxy(${2:target}, ${3:handler});" },
       { "trigger": "alert", "contents": "alert(${1:message});" },
       /**声明一个let的多变量*/
-      { "trigger": "let-more", "contents": "let [\n		${1:变量一}, \n		${3:变量二}, \n		${5:变量三}\n	] = \n	[\n		${2:值一}, \n		${4:值二}, \n		${6:值三}\n	];\n" }
+      { "trigger": "let-more", "contents": "let [\n      ${1:变量一}, \n      ${3:变量二}, \n      ${5:变量三}\n  ] = \n   [\n      ${2:值一}, \n    ${4:值二}, \n    ${6:值三}\n   ];\n" },
+      { "trigger": "node-require", "contents": "require('${1:package}')" },
+      { "trigger": "Object.数据属性", "contents": "Object.defineProperty(${1:person}, \"${2:name}\", {\n    configurable: false,//不可设置,不可delete删除\n    enumerable: false,//不遍历\n    writable: false,//不可写,只读\n    value: \"mill\"\n});" },
+      { "trigger": "Object.访问器属性", "contents": "Object.defineProperty(book, \"year\", {\n    get: function () {//可读属性\n        return this._year;\n    },\n    set: function (newValue) {//可写\n        if (newValue > 2004) {//判断条件满足则写入\n            this._year = newValue;\n            this.edition += newValue - 2004;\n        }\n    },\n    configurable: false,//不可设置,不可delete删除\n enumerable:false//不遍历\n\n});" },
+      { "trigger": "Object.原型属性值", "contents": "Object.getOwnPropertyNames(Person.prototype);" },
+      { "trigger": "Object.原型属性值", "contents": "Object.keys(Person.prototype);" },
    ]
 }

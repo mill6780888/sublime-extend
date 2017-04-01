@@ -1,0 +1,33 @@
+{
+   "scope": "source.js",
+
+   "completions":
+   [
+      { "trigger": "gulp.src", "contents": "gulp.src([${1:'client/templates/*.jade'}],${2:{\n   buffer:true,\n read:true,\n   base:\"${3:client写出时替换掉的部分}\"\n} })" },
+      { "trigger": "gulp.dest", "contents": "gulp.dest('${1:./dist/temp}',${2:{cwd:'D:/temp',mode:0777}})" },
+      { "trigger": "gulp.task", "contents": "gulp.task('${1:mytask}', ${2:['array', 'names'],} function(done) {\n  // 做一些事 done()或done(err)或return promise 或 return stream\n});" },
+      { "trigger": "gulp.watch", "contents": "gulp.watch(${1:['./Asset.less']}, ${2:['less']});" },
+      { "trigger": "gulp.file.isBuffer", "contents": "${1:file}.isBuffer();" },
+      { "trigger": "gulp.file.isStream", "contents": "${1:file}.isStream();" },
+      { "trigger": "gulp.file.isNull", "contents": "${1:file}.isNull();" },
+      { "trigger": "gulp.file.isDirectory", "contents": "${1:file}.isDirectory();" },
+      { "trigger": "gulp.file.是否符号链接", "contents": "${1:file}.isSymbolic();" },
+      { "trigger": "gulp.file.contents", "contents": "${1:file}.contents;" },
+      { "trigger": "gulp.file.cwd", "contents": "${1:file}.cwd;" },
+      { "trigger": "gulp.file.base", "contents": "${1:file}.base;//基本路径" },
+      { "trigger": "gulp.file.path", "contents": "${1:file}.path;//绝对路径" },
+      { "trigger": "gulp.file.history", "contents": "${1:file}.history;" },
+      { "trigger": "gulp.file.相对路径", "contents": "${1:file}.relative;" },
+      { "trigger": "gulp.file.dirname", "contents": "${1:file}.dirname;" },
+      { "trigger": "gulp.file.basename", "contents": "${1:file}.basename;" },
+      { "trigger": "gulp.file.文件名无后缀", "contents": "${1:file}.stem;" },
+      { "trigger": "gulp.file.文件后缀", "contents": "${1:file}.extname;" },
+      { "trigger": "gulp.file.symlink", "contents": "${1:file}.symlink;" },
+      { "trigger": "gulp.log.yellow", "contents": "gutil.log(gutil.colors.yellow(\"${1:content}\"));" },
+      { "trigger": "gulp.log.red", "contents": "gutil.log(gutil.colors.red(\"${1:content}\"));" },
+      { "trigger": "gulp.log.blue", "contents": "gutil.log(gutil.colors.blue(\"${1:content}\"));" },
+      { "trigger": "gulp.log.magenta粉红", "contents": "gutil.log(gutil.colors.magenta(\"${1:content}\"));" },
+     
+
+   ]
+}

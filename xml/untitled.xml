@@ -1,0 +1,5 @@
+<bean id="${1:beanName}" class="${2:类全名}">
+    <constructor-arg  type="${3:参数类型}">
+        <value><![CDATA[${4:参数值}]]></value>
+    </constructor-arg>
+</bean>

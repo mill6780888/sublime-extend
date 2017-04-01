@@ -1,0 +1,14 @@
+{
+   "scope": "source.js",
+
+   "completions":
+   [
+      { "trigger": "promise.resolve", "contents": "resolve(${1:value});" },
+      { "trigger": "promise.reject", "contents": "reject(${1:error});" },
+      { "trigger": "promise.new", "contents": "var ${1:promiseVal} = new Promise(function(resolve, reject) {\n  ${2:// ... some code}\n});" },
+      { "trigger": "promise.then", "contents": "${1:promise}.then(function(value) {\n  ${2:// success}\n}, function(error) {\n  ${3:// failure}\n});" },
+      { "trigger": "promise.catch", "contents": "${1:promise}.catch(function(error) {\n  ${2:// 处理 getJSON 和 前一个回调函数运行时发生的错误\n  console.log('发生错误！', error);}\n});" },
+      { "trigger": "promise.all", "contents": "var ${1:p} = Promise.all([${2:p1}${3:, p2}${4:, p3}]);" },
+
+   ]
+}

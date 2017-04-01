@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+def ${1:functionname}( ${2:args,name = "mill",*homes} ):
+   "${3:函数_文档字符串}"
+   ${5:function_suite}
+   return ${4:[expression]}
+]]></content>
+    <tabTrigger>function</tabTrigger>
+    <scope>source.py</scope>
+    <description>创建函数</description>
+</snippet>

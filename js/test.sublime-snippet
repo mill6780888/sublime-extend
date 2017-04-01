@@ -1,10 +1,15 @@
 <snippet>
-	<content><![CDATA[
-Hello, ${1:this} is a ${2:snippet}.
-]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>hello</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.xml</scope>
-	<description>另一个测试</description>
+    <content><![CDATA[def ${1:foo}():
+    doc = "${2:The $1 property.}"
+    def fget(self):
+        ${3:return self._$1}
+    def fset(self, value):
+        ${4:self._$1 = value}
+    def fdel(self):
+        ${5:del self._$1}
+    return locals()
+$1 = property(**$1())$0]]></content>
+    <tabTrigger>property</tabTrigger>
+    <scope>source.example-c</scope>
+    <description>New Property</description>
 </snippet>

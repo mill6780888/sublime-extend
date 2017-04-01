@@ -1,0 +1,47 @@
+{
+   "scope": "source.js",
+
+   "completions":
+   [
+      /**循环控制**/
+      { "trigger": "yeoman-调用子过程", "contents": "this.composeWith('${1:模块名或路径}'${2:, { ${3:key}: ${4:value} }});" },
+      { "trigger": "yeoman-list", "contents": "{\n	type: 'list',\n	name: '${1:yourname}',\n	message: '${2:请问你叫什么名字?}',\n	choices: [{\n		value: '${3:value}',\n		name: '${4:选项}',\n		checked: true\n	},\n	{\n		value: '${5:value}',\n		name: '${6:选项}',\n		checked: false\n	}\n\n	]\n}" },
+      { "trigger": "yeoman-rawlist", "contents": "{\n	type: 'rawlist',\n	name: '${1:yourname}',\n	message: '${2:请问你叫什么名字?}',\n	choices: [{\n		value: '${3:value}',\n		name: '${4:选项}',\n		checked: true\n	},\n	{\n		value: '${5:value}',\n		name: '${6:选项}',\n		checked: false\n	}\n\n	]\n}" },
+      { "trigger": "yeoman-checkbox", "contents": "{\n	type: 'checkbox',\n	name: '${1:yourname}',\n	message: '${2:请问你叫什么名字?}',\n	choices: [{\n		value: '${3:value}',\n		name: '${4:选项}',\n		checked: true\n	},\n	{\n		value: '${5:value}',\n		name: '${6:选项}',\n		checked: false\n	}\n\n	]\n}" },
+      { "trigger": "yeoman-expand", "contents": "{\n	type: 'expand',\n	name: '${1:yourname}',\n	message: '${2:请问你叫什么名字?}',\n	choices: [{\n		value: '${3:value}',\n		name: '${4:选项}',\n		checked: true,\n		key:'a'\n	},\n	{\n		value: '${5:value}',\n		name: '${6:选项}',\n		checked: false,\n		key: 'b'\n	}\n\n	]\n}\n" },
+      { "trigger": "yeoman-hasMod", "contents": "var hasMod = function(mod) {\n	return props.${1:model}.indexOf(mod) !== -1;\n};\n\n" },
+      { "trigger": "yeoman-constructor", "contents": "constructor: function () {\n	generators.Base.apply(this, arguments);\n\n	// This makes `appname` a required argument.\n	this.argument('appname', { type: String, required: true });\n	// And you can then access it later on this way; e.g. CamelCased\n	this.appname = _.camelCase(this.appname);\n}" },
+      { "trigger": "yeoman-options", "contents": "// This method adds support for a `--coffee` flag\nthis.option('${1:coffee}');\n// And you can then access it later on this way; e.g.\nthis.scriptSuffix = (this.options.${1:coffee} ? \".coffee\": \".js\");" },
+      { "trigger": "yeoman-npmInstall", "contents": "this.npmInstall(['${1:npmname}'], { 'saveDev': true });" },
+      { "trigger": "yeoman-spawnCommand", "contents": "this.spawnCommand('composer', ['install']);" },
+      { "trigger": "yeoman-spawnCommandSync", "contents": "this.spawnCommandSync('composer', ['install']);" },
+      { "trigger": "yeoman-destinationRoot", "contents": "this.destinationRoot();" },
+      { "trigger": "yeoman-destinationPath", "contents": "this.destinationPath('${1:./index.js}');" },
+      { "trigger": "yeoman-sourceRoot", "contents": "this.sourceRoot(${1:重写模板路径});" },
+      { "trigger": "yeoman-templatePath", "contents": "this.templatePath('${1:./index.js}');" },
+      { "trigger": "yeoman-input", "contents": "{\n    type:'input',\n    name: '${1:varname}',\n    message: '${2:提示信息}',\n    default: '${3:默认值}'\n}" },
+      { "trigger": "yeoman-confirm", "contents": "{\n    type:\"confirm\",\n    name:\"${1:varname}\",\n    message:\"${2:提示消息}\",\n    default:false	\n}" },
+
+      { "trigger": "yeoman-config-save", "contents": "this.config.save()" },
+      { "trigger": "yeoman-config-set", "contents": "this.config.set(${1:key},${2:value})" },
+      { "trigger": "yeoman-config-defaults", "contents": "this.config.defaults(${1:key},${2:value})" },
+      { "trigger": "yeoman-config-get", "contents": "this.config.get(${1:key})" },
+      { "trigger": "yeoman-config-all", "contents": "this.config.getAll()" },
+      { "trigger": "yeoman-config-delete", "contents": "this.config.delete(${1:key})" },
+
+      { "trigger": "mfs-read", "contents": "let content=fs.read(${1:filepath}${2:, [raw:true]});//buffer读取" },
+      { "trigger": "mfs-readJSON", "contents": "let obj=fs.readJSON(${1:filepath}${2:, [default]});" },
+      { "trigger": "mfs-write", "contents": "fs.write(${1:filepath}, ${2:content});" },
+      { "trigger": "mfs-writeJSON", "contents": "fs.writeJSON(${1:filepath}, ${2:content});" },
+      { "trigger": "mfs-append", "contents": "fs.append(${1:filepath}, ${2:content});" },
+      { "trigger": "mfs-exists", "contents": "fs.exists(${1:filepath});" },
+      { "trigger": "mfs-delete", "contents": "fs.delete(${1:filepath}, {globOptions:true});" },
+      { "trigger": "mfs-copy", "contents": "fs.copy(${1:from}, ${2:to});" },
+      { "trigger": "mfs-move", "contents": "fs.move(${1:from}, ${2:to});" },
+      { "trigger": "mfs-copyTpl", "contents": "fs.copyTpl(${1:from}, ${2:to},${3:context});" },
+
+
+     
+
+   ]
+}

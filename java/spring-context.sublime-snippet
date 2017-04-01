@@ -1,0 +1,10 @@
+<snippet>
+    <content><![CDATA[
+//spring 容器加载
+ApplicationContext ${1:ctx} = new ClassPathXmlApplicationContext("${2:applicationContext.xml}");
+${3:HelloWorld} ${4:beanId} = ${1:ctx}.getBean("${4:beanId}", ${3:HelloWorld}.class);
+]]></content>
+    <tabTrigger>spring-context</tabTrigger>
+    <scope>source.java</scope>
+    <description>容器加载</description>
+</snippet>

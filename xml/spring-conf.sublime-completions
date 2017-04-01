@@ -1,0 +1,15 @@
+{
+   "scope": "text.xml",
+
+   "completions":
+   [
+      /**循环控制**/
+      { "trigger": "spring-bean", "contents": "<bean id=\"${1:beanName}\" class=\"${2:类全名}\">\n    <!--通过set方法进行注入的-->\n    <property name=\"${3:属性名}\" value=\"${4:属性值}\"></property>\n</bean>" },
+      { "trigger": "spring-bean-constructor", "contents": "<bean id=\"${1:beanName}\" class=\"${2:类全名}\">\n    <constructor-arg  type=\"${3:参数类型}\">\n        <value><![CDATA[${4:参数值}]]></value>\n    </constructor-arg>\n</bean>" },
+      { "trigger": "spring-scan", "contents": "<!-- 自动扫描注解包 -->\n<context:component-scan base-package=\"${1:com.mill.java}\" >\n</context:component-scan>" },
+
+      { "trigger": "sublime-snippet", "contents": "<snippet>\n    <content><![CDATA[\n${4:内容}\n]]></content>\n    <tabTrigger>${2:function}</tabTrigger>\n    <scope>${1:source.python}</scope>\n    <description>${3:描述}</description>\n</snippet>\n" },
+     
+
+   ]
+}
