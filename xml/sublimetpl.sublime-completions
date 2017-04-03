@@ -1,0 +1,11 @@
+{
+   "scope": "text.xml",
+
+   "completions":
+   [
+      
+      { "trigger": "sblime-scope", "contents": "${1:code}" },
+      
+
+   ]
+}

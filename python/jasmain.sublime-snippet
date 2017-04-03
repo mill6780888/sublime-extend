@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+describe("${1:一个测试模块}",
+function() {
+	var a;
+
+	it("${2:其中一个测试方法}",
+	function() {
+		a = true;
+
+		expect(a).toBe(true);//这里才是断言，断言a为true
+	});
+	
+});
+]]></content>
+    <tabTrigger>jasmine.describe</tabTrigger>
+    <scope>source.js</scope>
+    <description>创建一个测试用例</description>
+</snippet>
+	

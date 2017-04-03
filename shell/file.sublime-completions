@@ -1,0 +1,19 @@
+{
+   "scope": "source.shell",
+
+   "completions":
+   [
+      /*sublimeapi*/
+      { "trigger": "file.cat.查看", "contents": "cat $1 ${2:fileName}" },
+      { "trigger": "file.clearcontent", "contents": "cat /dev/null > {2:fileName}" },
+      
+      { "trigger": "file.const.行号", "contents": "n" },
+      { "trigger": "file.const.行号去空行", "contents": "b" },
+      { "trigger": "file.const.合并空行", "contents": "n" },
+      { "trigger": "file.const.显示行首", "contents": "v" },
+      { "trigger": "file.const.显示行尾", "contents": "E" },
+      { "trigger": "file.const.TAB", "contents": "T" },
+      
+
+   ]
+}

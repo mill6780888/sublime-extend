@@ -1,0 +1,15 @@
+ { "trigger": "args.const.所有参数引号", "contents": "$@" },
+      { "trigger": "args.const.退出状态", "contents": "$?" },
+      { "trigger": "args.const.第n个参数", "contents": "$${1:n}" },
+      { "trigger": "foreach.args.遍历参数", "for i in \"$@\"; do\n    echo $i\ndone" },
+
+      { "trigger": "array.声明数组", "${1:my_array}=(${2:A B \"C\" D})" },
+      { "trigger": "array.元素赋值", "${1:my_array}[0]=${2:value}" },
+      { "trigger": "array.取值", "${${1:array_name}[${2:index}]}" },
+      { "trigger": "array.取所有元素1", "${${1:array_name}[*]}" },
+      { "trigger": "array.取所有元素2", "${${1:array_name}[@]}" },
+      { "trigger": "array.长度1", "${#${1:array_name}[*]}" },
+      { "trigger": "array.长度2", "${#${1:array_name}[@]}" },
+
+
+      { "trigger": "expr.add", "${1:val}=`expr 2 + 2`" },

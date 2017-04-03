@@ -1,0 +1,20 @@
+<snippet>
+    <content><![CDATA[
+class ${1:ColorPoint} ${2:extends ${3:Point}}  {
+  constructor(){
+    // ...
+  }
+
+  toString(){
+    // ...
+  }
+
+  toValue(){
+    // ...
+  }
+}
+]]></content>
+    <tabTrigger>class</tabTrigger>
+    <scope>source.js</scope>
+    <description>创建一个类</description>
+</snippet>

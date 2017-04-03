@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+it("${1:也可以有反面的断言}",
+	function() {
+		expect(false).not.toBe(true);
+	});
+]]></content>
+    <tabTrigger>jasmine.it</tabTrigger>
+    <scope>source.js</scope>
+    <description>创建一个断言方法</description>
+</snippet>

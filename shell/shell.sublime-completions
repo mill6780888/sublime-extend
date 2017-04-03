@@ -1,10 +1,85 @@
 {
-   "scope": "source.py",
+   "scope": "source.shell",
 
    "completions":
    [
       /*sublimeapi*/
-      { "trigger": "base.var", "contents": "${1:var_nme}=\"${2:var_value\"" },
+      { "trigger": "base.var", "contents": "${1:var_nme}=\"${2:var_value}\"" },
       { "trigger": "foreach.file", "contents": "for file in `ls /etc`" },
+      { "trigger": "header", "contents": "#!/bin/bash" },
+      
+
+      { "trigger": "args.const.参数个数", "contents": "\\$#" },
+      { "trigger": "args.const.所有参数字符串", "contents": "\\$*" },
+      { "trigger": "args.const.脚本进程ID", "contents": "\\$\\$" },
+      { "trigger": "args.const.最后一个进程ID", "contents": "\\$!" },
+
+     
+
+      { "trigger": "args.const.所有参数引号", "contents": "\\$@" },
+      { "trigger": "args.const.退出状态", "contents": "\\$?" },
+      { "trigger": "args.const.第n个参数", "contents": "\\$${1:n}" },
+      { "trigger": "foreach.args.遍历参数","contents": "for i in \"\\$\\@\"; do\n    echo \\$i\ndone" },
+
+
+      { "trigger": "array.声明数组", "contents":"${1:my_array}=(${2:A B \"C\" D})" },
+      { "trigger": "array.元素赋值", "contents":"${1:my_array}[0]=${2:value}" },
+      { "trigger": "array.取值", "contents":"\\${${1:array_name}[${2:index}]}" },
+      { "trigger": "array.取所有元素1", "contents":"\\${${1:array_name}[*]}" },
+      { "trigger": "array.取所有元素2", "contents":"\\${${1:array_name}[@]}" },
+      { "trigger": "array.长度1", "contents":"\\${#${1:array_name}[*]}" },
+      { "trigger": "array.长度2", "contents":"\\${#${1:array_name}[@]}" },
+
+
+      { "trigger": "expr.+", "contents":"${1:val}=`expr $2 + $3`" },
+      { "trigger": "expr.-", "contents":"${1:val}=`expr $2 - $3`" },
+      { "trigger": "expr.*", "contents":"${1:val}=`expr $2 \\* $3`" },
+      { "trigger": "expr./", "contents":"${1:val}=`expr $2 / $3`" },
+      { "trigger": "expr.%", "contents":"${1:val}=`expr $2 % $3`" },
+
+      { "trigger": "expr.==", "contents":"if [ $1 == $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.!=", "contents":"if [ $1 != $2 ]\nthen\n   ${3:#TODO}\nfi" },
+
+      { "trigger": "expr.eq.相等", "contents":"if [ $1 -eq $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.ne.不相等", "contents":"if [ $1 -ne $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.gt.大于", "contents":"if [ $1 -gt $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.gt.小于", "contents":"if [ $1 -lt $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.ge.不小于", "contents":"if [ $1 -ge $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.ge.不大于", "contents":"if [ $1 -le $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.!.非", "contents":" ! " },
+      { "trigger": "expr.o.或", "contents":" -o " },
+      { "trigger": "expr.a.且", "contents":" -a " },
+      { "trigger": "expr.&&.且", "contents":" && " },
+      { "trigger": "expr.||.或", "contents":" || " },
+      { "trigger": "expr.str.=", "contents":"if [ $1 = $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.str.!=", "contents":"if [ $1 != $2 ]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.str.长度为0", "contents":"if [ -z $1]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.str.长度不为0", "contents":"if [ -n $1]\nthen\n   ${3:#TODO}\nfi" },
+      { "trigger": "expr.str.不为空", "contents":"if [ $1 ]\nthen\n   ${3:#TODO}\nfi" },
+
+      { "trigger": "expr.file.块设备", "contents":"if [ -b $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.字符设备", "contents":"if [ -c $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.目录", "contents":"if [ -d $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.普通文件", "contents":"if [ -f $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.SGID", "contents":"if [ -g $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.黏着位", "contents":"if [ -k $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.有名管道", "contents":"if [ -p $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.SUID", "contents":"if [ -u $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.可读", "contents":"if [ -r $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.可写", "contents":"if [ -w $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.可执行", "contents":"if [ -x $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.不为空", "contents":"if [ -s $1 ]\nthen\n   ${2:#TODO}\nfi" },
+      { "trigger": "expr.file.存在", "contents":"if [ -e $1 ]\nthen\n   ${2:#TODO}\nfi" },
+
+      { "trigger": "controller.while", "contents":"while [[ ${1:condition} ]]; do\n	${2:#statements}\ndone" },
+      { "trigger": "expr.>", "contents":"${1:command} > /dev/null" },
+      { "trigger": "function", "contents":"${1:demoFun}(){\n    ${2:echo \"这是我的第一个 shell 函数!\"}\n}\n\n" },
+      { "trigger": "include", "contents":"source ${1:filename}" },
+      "echo ",
+      "printf ",
+      "break ",
+      "continue ",
+      "return ",
+
    ]
 }

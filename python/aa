@@ -25,34 +25,35 @@ buffer_id()	int	当前view下bufferID。
 file_name()	完整文件名
 name()	String	buffer指定的名称。
 set_name(name)	None	设置buffer的名称。
-is_loading()	bool	如果buffer还在从磁盘载入ture，表示还未准备好给用户使用。
+is_loading()	bool	buffer载入中
 is_dirty()	bool	是否有未保存到buffer的修改。
 is_read_only()	bool	true，如果buffer不允许修改。
 set_read_only(value)	None	设置缓冲区不可修改。
-is_scratch()	bool	如果缓冲区是临时缓冲区True。临时缓冲区不会报告为dirty。
+is_scratch()	bool	是临时缓冲区True
 set_scratch(value)	None	设置buffer为临时缓冲区。
-settings()	Settings	view的settings对象。settings对象对当前view是私有的。
+settings()	Settings	view的settings对象
 window()	Window	持有当前view的window。
-run_command(string, <args>)	None	运行指定的TextCommand，args传入参数。
+run_command(string, <args>)	None	运行TextCommand
 size()	int	文件中字符总数量。
 substr(region)	String	region选区内容字符串。
 substr(point)	String	point点的右侧字符。
-begin_edit(<command>, <args>)	Edit	创建一个edit对象，可以划定一组撤销操作，需要对应到 end_edit()标记。
-end_edit(edit)	Edit	标记完成一个edit对象。（译者注：begin_edit到end_edit之间的操作可以当成一个命令分组，可以用于撤销操作。）
-insert(edit, point, string)	int	在缓冲区指定的点插入一个字符串。插入的字符数量；如果插入当前缓冲区的tabs有点区别。
+begin_edit(<command>, <args>)	Edit	创建一个edit对应到 end_edit()标记。
+end_edit(edit)	Edit	标记完成一个edit对象。
+insert(edit, point, string)	int	插入字符串
 erase(edit, region)	None	从缓冲区移除region选区内容。
-replace(edit, region, string)	None	把region选区内容替换成指定的字符串。
-sel()	RegionSet	selection(选择)的引用。
+replace(edit, region, string)	None	替换字符串。
+sel()	RegionSet	(选择)的引用。
 line(point)	Region	point点所在的行。
-line(region)	Region	region区域行头到行尾的一份拷贝，从行头到行尾可能跨了多行（译者注：换行显示的时候，但是中间没有换行符）。
-full_line(point)	Region	同 line()，但是尾部有换行符的时候也包括了换行符。
-full_line(region)	Region	同 line()， 但是尾部有换行符的时候也包括了换行符
-lines(region)	[Region]	region区域的所有行列表 (经过排序) 。
-split_by_newlines(region)	[Region]	用换行符把整个region分割成多个region区域，region列表。
+line(region)	Region	无换行符copy
+full_line(point)	Region	换行符
+full_line(region)	Region	换行符
+lines(region)	[Region]	所有行列表
+split_by_newlines(region)	[Region]	换行符分割region列表。
 word(point)	Region	包含point点的单词。
-word(region)	Region	包含region区域的单词区域（从第一个单词的开头，到最后一个单词的末尾）。有可能会跨多个单词。
-find(pattern, fromPosition, <flags>)	Region	匹配的第一个区域，从指定的点位置开始，没有匹配结果None。flags参数可以是 sublime.LITERAL, sublime.IGNORECASE, 或者2个"或运算"。
-find_all(pattern, <flags>, <format>, <extractions>)	[Region]	所有(无重叠)的匹配区域结果。flags参数同上， 如果有format参数，所有匹配结果都会按指定格式被格式化并添加到extractions列表里。
+word(region)	Region	包含region区域的单词区域
+find(pattern, fromPosition, <flags>)	Region	flags参数可以是 sublime.LITERAL, sublime.IGNORECASE, 或者2个"或运算"。
+find_all(pattern, <flags>, <format>, <extractions>)	[Region]	所有(无重叠)的匹配区域结果。flags参数同上， 
+
 rowcol(point)	(int, int)	计算指定点从0开始的行位置和列位置。
 text_point(row, col)	int	计算指定行，列位置字符的偏移量。"col"("列")是从一行的行头开始的字符数量。
 set_syntax_file(syntax_file)	None	指定语法文件。view. syntax_file文件应该是按行来定义语法名称，基于Packages/Python/Python.tmLanguage。接受当前语法可以使用view.settings().get('syntax')。
@@ -141,19 +142,11 @@ intersects(region)	bool	如果this==region或者当前region和指定region都�
 contains(region)	bool	如果指定的region是当前region的一个子集True。
 contains(point)	bool	如果begin() <= point <= end()True。（译者注：point点在当前区域范围内）。
 
-sublime.Edit类
-
-Edit对象没有方法，它是用于对buffer的修改进行分组。
-
-可以通过view.begin_edit()来创建。每一个begion_edit()调用都要对应一个view.end_edit()调用。通常会写在try ... finally块内。
-
-方法	值	描述
-(无方法)	
 
 
-sublime.Window类
 
-方法	值	描述
+
+sublime.Window
 id()	int	window的ID.
 new_file()	View	创建一个文件。一个空的view，view的is_loaded方法True。
 open_file(file_name, <flags>)	View	打开指定文件，并对应的view。如果文件已经被打开，会切换到当前当前视图。注意，文件载入是异步的，view的is_loading() 方法False前不能对文件进行操作。
@@ -176,9 +169,7 @@ set_view_index(view, group, index)	None	把view移动到指定分组和指定的
 folders()	[String]	当前打开的文件夹列表。（译者注：sublime左侧显示的folders列表的每个跟目录）。
 run_command(string, <args>)	None	运行WindowCommand，传入指定参数。
 show_quick_panel(items, on_done, <flags>)	None	显示一个选择列表中某个选项的快速面板。 on_done会被调用一次，接受选中项的索引为参数。如果快速面板被取消，on_done调用的时候接收的参数为-1。
-Items 可以是字符串数组，或者一个字符串数组的数组(二维字符串数组)。如果是后者，快速面板里的每个条目会显示成多行。
-
-Flags 只能有一个值： sublime.MONOSPACE_FONT
+Items 可以是字符串数组，或者一个字符串数组的数组(二维字符串数组)。如果是后者，快速面板里的每个条目会显示成多行。Flags 只能有一个值： sublime.MONOSPACE_FONT
 
 show_input_panel(caption, initial_text, on_done, on_change, on_cancel)	View	显示一个输入面板，收集用户的一行输入。caption是输入框的标题，on_done 和 on_change如果不为空的话需要是一个接受一个字符串的函。on_cancel 是一个无参数的函数。
 get_output_panel(name)	View	view对应的指定名称的输出面板，如果有必要会创建。output面板可以通过运行show_panel( window command)来显示，panel 的名称会加上 "output." 前缀。
