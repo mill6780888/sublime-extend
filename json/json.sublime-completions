@@ -1,0 +1,10 @@
+{
+   "scope": "source.json",
+
+   "completions":
+   [
+      /*sublimeapi*/
+      { "trigger": "base.el", "contents": "${${1:content}}" },
+
+   ]
+}

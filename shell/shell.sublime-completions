@@ -1,0 +1,10 @@
+{
+   "scope": "source.py",
+
+   "completions":
+   [
+      /*sublimeapi*/
+      { "trigger": "base.var", "contents": "${1:var_nme}=\"${2:var_value\"" },
+      { "trigger": "foreach.file", "contents": "for file in `ls /etc`" },
+   ]
+}
