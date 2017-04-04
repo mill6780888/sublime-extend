@@ -6,6 +6,7 @@
       /*sublimeapi*/
       { "trigger": "file.cat.查看", "contents": "cat $1 ${2:fileName}" },
       { "trigger": "file.clearcontent", "contents": "cat /dev/null > {2:fileName}" },
+      { "trigger": "file.过滤所有目录", "contents": "ls -al |grep \"^d\"" },
       
       { "trigger": "file.const.行号", "contents": "n" },
       { "trigger": "file.const.行号去空行", "contents": "b" },

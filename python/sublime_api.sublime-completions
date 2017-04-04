@@ -5,5 +5,15 @@
    [
       /*sublimeapi*/
       { "trigger": "yield", "contents": "yield" },
+      { "trigger": "input.接收用户输入", "contents": "${1:str} = raw_input(\"${2:请输入：}\");" },
+      { "trigger": "input.接收用户输入2", "contents": "${1:str} = input(\"${2:请输入：}\");#可以接收表达式" },
+
+
+      { "trigger": "file.打开文件-读取", "contents": "${1:fileobject} = open(${2:file_name}${3:,access_mode}${4:,buffering})" },
+      { "trigger": "file.attr.是否已关闭", "contents": "file.closed" },
+      { "trigger": "file.attr.访问模式", "contents": "file.mode" },
+      { "trigger": "file.attr.文件名称", "contents": "file.name" },
+      { "trigger": "file.attr.print后跟空格", "contents": "file.softspace" },
+
    ]
 }
