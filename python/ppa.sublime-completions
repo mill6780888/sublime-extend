@@ -52,6 +52,28 @@
       { "trigger": "class-isinstance-是否实例", "contents": "isinstance(${1:obj},${2:Class})" },
       { "trigger": "class-访问私有属性", "contents": "object._${1:className}__${2:attrName}" },
 
+/*sublime-api*/
+     { "trigger": "sublime-sublime-延时调用", "contents": "sublime.set_timeout(${2:callback, delay})" },
+   { "trigger": "sublime-sublime-设置状态栏消息.", "contents": "sublime.status_message(${2:string})" },
+   { "trigger": "sublime-sublime-error对话框.", "contents": "sublime.error_message(${2:string})" },
+   { "trigger": "sublime-sublime-message对话框.", "contents": "sublime.message_dialog(${2:string})" },
+   { "trigger": "sublime-sublime-确认对话框", "contents": "${1:bool}=sublime.ok_cancel_dialog(${2:string, <ok_button>})" },
+   { "trigger": "sublime-sublime-载入配置", "contents": "${1:Settings}=sublime.load_settings(${2:base_name})#name参数要包括文件名和后缀" },
+   { "trigger": "sublime-sublime-保存配置", "contents": "sublime.save_settings(${2:base_name})" },
+   { "trigger": "sublime-sublime-打开窗口列表。", "contents": "${1:[Window]}=sublime.windows()" },
+   { "trigger": "sublime-sublime-最近使用的窗口。", "contents": "${1:Window}=sublime.active_window()" },
+   { "trigger": "sublime-sublime-packages目录的路径.", "contents": "${1:String}=sublime.packages_path()" },
+   { "trigger": "sublime-sublime-*.sublime-package文件的目录", "contents": "${1:String}=sublime.installed_packages_path()" },
+   { "trigger": "sublime-sublime-返回剪贴板的内容。", "contents": "${1:String}=sublime.get_clipboard()" },
+   { "trigger": "sublime-sublime-设置剪贴板的内容。", "contents": "sublime.set_clipboard(${2:string})" },
+   { "trigger": "sublime-sublime-选择器设置", "contents": "${1:Int}=sublime.score_selector(${2:scope, selector})" },
+   { "trigger": "sublime-sublime-运行ApplicationCommand", "contents": "sublime.run_command(${2:string, <args>})" },
+   { "trigger": "sublime-sublime-启用控制命令的日志", "contents": "sublime.log_commands(${2:flag})" },
+   { "trigger": "sublime-sublime-启用控制日志输出", "contents": "sublime.log_input(${2:flag})" },
+   { "trigger": "sublime-sublime-版本号。", "contents": "${1:String}=sublime.version()" },
+   { "trigger": "sublime-sublime-运行的平台", "contents": "${1:String}=sublime.platform()" },
+   { "trigger": "sublime-sublime-CPU架构", "contents": "${1:String}=sublime.arch()" },
+
 
       { "trigger": "regexp-flags-re.I-大小写不敏感", "contents": "${1:re.I}" },
       { "trigger": "regexp-flags-re.L-本地化识别", "contents": "${1:re.L}" },
@@ -67,12 +89,8 @@
 
       { "trigger": "regexp-groups-获取所有结果", "contents": "${1:regResult}.groups()" },
 
-      /*sublime-api*/
-      { "trigger": "sublime-sublime-message-设置状态栏消息", "contents": "sublime.status_message(\"${1:content}\")" },
-      { "trigger": "sublime-sublime-error_message-错误消息", "contents": "sublime.error_message(\"${1:content}\")" },
-      { "trigger": "sublime-sublime-message_dialog-对话框", "contents": "sublime.message_dialog(\"${1:content}\")" },
-      { "trigger": "sublime-sublime-set_timeout-异步", "contents": "sublime.set_timeout(${1:callbacl},${2:5000})" },
-      { "trigger": "sublime-sublime-ok_cancel_dialog-确认框", "contents": "${3:result}=sublime.ok_cancel_dialog(\"${1:content}\", \"yes\")" },
+      
+ 
 
       /**关键字*/
       { "trigger": "and", "contents": "and" },
