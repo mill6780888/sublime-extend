@@ -1,18 +1,23 @@
 let tplstr = `
-abs(x)	number	返回数字的绝对值，如abs(-10) 返回 10
-ceil(x)	number	返回数字的上入整数，如math.ceil(4.1) 返回 5
-cmp(x, y)	number	如果 x < y 返回 -1, 如果 x == y 返回 0, 如果 x > y 返回 1
-exp(x)	float	返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045
-fabs(x)	number	返回数字的绝对值，如math.fabs(-10) 返回10.0
-floor(x)	number	返回数字的下舍整数，如math.floor(4.9)返回 4
-log(x)	number	如math.log(math.e)返回1.0,math.log(100,10)返回2.0
-log10(x)	number	返回以10为基数的x的对数，如math.log10(100)返回 2.0
-max(x1, x2,...)	number	返回给定参数的最大值，参数可以为序列。
-min(x1, x2,...)	number	返回给定参数的最小值，参数可以为序列。
-modf(x)	number	返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。
-pow(x, y)	number	x**y 运算后的值。
-round(x [,n])	number	返回浮点数x的四舍五入值，如给出n值，则代表舍入到小数点后的位数。
-sqrt(x)	number	返回数字x的平方根，数字可以为负数，返回类型为实数，如math.sqrt(4)返回 2+0j
+
+
+assert(value[, message])		测试 value 是否为真值
+assert.deepEqual(actual, expected[, message])		测试 actual 参数与 expected 参数是否深度相等。 原始值使用相等运算符（==）比较。
+assert.deepStrictEqual(actual, expected[, message])		首先，原始值使用全等运算符（===）比较。 其次，对象的比较包括检查它们的原型是否全等。
+assert.doesNotThrow(block[, error][, message])		当 assert.doesNotThrow() 被调用时，它会立即调用 block 函数
+assert.equal(actual, expected[, message])		使用相等运算符（==）测试 actual 参数与 expected 参数是否相等
+assert.fail(actual, expected, message, operator)		抛出 AssertionError
+assert.ifError(value)		如果 value 为真，则抛出 value
+assert.notDeepEqual(actual, expected[, message])		测试是否不深度相等
+assert.notDeepStrictEqual(actual, expected[, message])		测试是否不深度全等
+assert.notEqual(actual, expected[, message])		使用不等运算符（!=）测试是否不相等
+assert.notStrictEqual(actual, expected[, message])		使用不全等运算符（!==）测试是否不全等
+assert.ok(value[, message])		测试 value 是否为真值
+assert.strictEqual(actual, expected[, message])		使用全等运算符（===）测试是否全等
+assert.throws(block[, error][, message])		期望 block 函数抛出错误
+
+
+
 
 `;
 
@@ -22,9 +27,9 @@ let [
       objAlias
   ] = 
    [
-      "spring.conf", 
+      "nodejs.", 
     ";//",
-    "${2:strObj}."
+    "${2:numObj}."
    ];
 
 
@@ -84,19 +89,21 @@ function handlerItem(item,index,value) {
 }
 
 function getTitle(item,index,value) {
-	return modelName+item[2];
+	let apiName = /^(.*)\(/.test(item[0]);
+	return modelName+RegExp.$1+item[2];
 }
 
 function getContent(item,index,value) {
 	let result="",tag=0;
 	let content = item[0].replace(/\$/g,"\\\\$").replace(/\"/g,"\\\"");
-	content=content.replace(/\(/,"(${2:").replace(/\)/,"})");
+	content=content.replace(/\(/,"(${3:").replace(/\)/,"})");
+	content=content.replace("(${3:})","()");
 	content=content.replace(/\[?\,/g,(word)=>{
 		tag++;
 		if("[,"==word){
 			return "}"+"${:"+word+(tag+3);
 		}
-		return "}"+word+"${:"+(tag+3);
+		return "}"+word+"${"+(tag+3)+":";
 	});
 	if(item[1]){
 		result+='${1:'+item[1]+'}='+objAlias;
@@ -109,3 +116,5 @@ function concat(title,content) {
 		let tpl=`{ "trigger": "${title}", "contents": "${content}" },`;
 	return tpl;
 }
+
+

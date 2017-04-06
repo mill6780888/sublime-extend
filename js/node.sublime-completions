@@ -1,0 +1,43 @@
+{
+	"trigger": "nodejs.assert测试 value 是否为真值",
+	"contents": "assert(${3:value}${:[,4 message]});//测试 value 是否为真值"
+}, {
+	"trigger": "nodejs.assert.deepEqual测试 actual 参数与 expected 参数是否深度相等。 原始值使用相等运算符（==）比较。",
+	"contents": "assert.deepEqual(${3:actual},${4: expected}${:[,5 message]});//测试 actual 参数与 expected 参数是否深度相等。 原始值使用相等运算符（==）比较。"
+}, {
+	"trigger": "nodejs.assert.deepStrictEqual首先，原始值使用全等运算符（===）比较。 其次，对象的比较包括检查它们的原型是否全等。",
+	"contents": "assert.deepStrictEqual(${3:actual},${4: expected}${:[,5 message]});//首先，原始值使用全等运算符（===）比较。 其次，对象的比较包括检查它们的原型是否全等。"
+}, {
+	"trigger": "nodejs.assert.doesNotThrow当 assert.doesNotThrow() 被调用时，它会立即调用 block 函数",
+	"contents": "assert.doesNotThrow(${3:block}${:[,4 error]}${:[,5 message]});//当 assert.doesNotThrow() 被调用时，它会立即调用 block 函数"
+}, {
+	"trigger": "nodejs.assert.equal使用相等运算符（==）测试 actual 参数与 expected 参数是否相等",
+	"contents": "assert.equal(${3:actual},${4: expected}${:[,5 message]});//使用相等运算符（==）测试 actual 参数与 expected 参数是否相等"
+}, {
+	"trigger": "nodejs.assert.fail抛出 AssertionError",
+	"contents": "assert.fail(${3:actual},${4: expected},${5: message},${6: operator});//抛出 AssertionError"
+}, {
+	"trigger": "nodejs.assert.ifError如果 value 为真，则抛出 value",
+	"contents": "assert.ifError(${3:value});//如果 value为真，则抛出 value"
+}, {
+	"trigger": "nodejs.assert.notDeepEqual测试是否不深度相等",
+	"contents": "assert.notDeepEqual(${3:actual},${4: expected}${:[,5 message]});//测试是否不深度相等"
+}, {
+	"trigger": "nodejs.assert.notDeepStrictEqual测试是否不深度全等",
+	"contents": "assert.notDeepStrictEqual(${3:actual},${4: expected}${:[,5 message]});//测试是否不深度全等"
+}, {
+	"trigger": "nodejs.assert.notEqual使用不等运算符（!=）测试是否不相等",
+	"contents": "assert.notEqual(${3:actual},${4: expected}${:[,5 message]});//使用不等运算符（!=）测试是否不相等"
+}, {
+	"trigger": "nodejs.assert.notStrictEqual使用不全等运算符（!==）测试是否不全等",
+	"contents": "assert.notStrictEqual(${3:actual},${4: expected}${:[,5 message]});//使用不全等运算符（!==）测试是否不全等"
+}, {
+	"trigger": "nodejs.assert.ok测试 value 是否为真值",
+	"contents": "assert.ok(${3:value}${:[,4 message]});//测试 value 是否为真值"
+}, {
+	"trigger": "nodejs.assert.strictEqual使用全等运算符（===）测试是否全等",
+	"contents": "assert.strictEqual(${3:actual},${4: expected}${:[,5 message]});//使用全等运算符（===）测试是否全等"
+}, {
+	"trigger": "nodejs.assert.throws期望 block 函数抛出错误",
+	"contents": "assert.throws(${3:block}${:[,4 error]}${:[,5 message]});//期望 block 函数抛出错误"
+},

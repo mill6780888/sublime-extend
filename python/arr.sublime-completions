@@ -1,0 +1,114 @@
+{
+	"scope": "source.js",
+
+	"completions": [
+
+		{
+			"trigger": "base.array.concat连接多个数组",
+			"contents": "${1:arr}=${2:arrayObj}.concat(${2:arrayX},${4:arrayX},${5:......});//连接两个或更多的数组，并返回结果"
+		}, {
+			"trigger": "base.array.join合并为字符串",
+			"contents": "${1:str}=${2:arrayObj}.join(${2:separator});//把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔"
+		}, {
+			"trigger": "base.array.pop删除最后元素",
+			"contents": "${1:last}=${2:arrayObj}.pop();//删除并返回数组的最后一个元素"
+		}, {
+			"trigger": "base.array.push添加元素",
+			"contents": "${1:len}=${2:arrayObj}.push(${2:newelement1},${4:newelement2},${5:....});//向数组的末尾添加一个或更多元素，并返回新的长度"
+		}, {
+			"trigger": "base.array.reverse颠倒顺序",
+			"contents": "${1:arr}=${2:arrayObj}.reverse();//颠倒数组中元素的顺序"
+		}, {
+			"trigger": "base.array.shift删除第一个元素",
+			"contents": "${1:first}=${2:arrayObj}.shift();//删除并返回数组的第一个元素"
+		}, {
+			"trigger": "base.array.slice选定的元素",
+			"contents": "${1:arr}=${2:arrayObj}.slice(${2:start},${4:end});//从某个已有的数组返回选定的元素"
+		}, {
+			"trigger": "base.array.sort排序",
+			"contents": "${1:arr}=${2:arrayObj}.sort(${2:[sortby]});//对数组的元素进行排序"
+		}, {
+			"trigger": "base.array.splice删除并添加元素",
+			"contents": "${1:arr}=${2:arrayObj}.splice(${2:index},${4:howmany},${5:item1},${6:.....});//删除元素，并向数组添加新元素"
+		}, {
+			"trigger": "base.array.toSource对象的源代码",
+			"contents": "${1:str}=${2:arrayObj}.toSource();//返回该对象的源代码"
+		}, {
+			"trigger": "base.array.toString转换为字符串",
+			"contents": "${1:str}=${2:arrayObj}.toString();//把数组转换为字符串，并返回结果"
+		}, {
+			"trigger": "base.array.toLocaleString转换为本地字符串",
+			"contents": "${1:str}=${2:arrayObj}.toLocaleString();//把数组转换为本地数组，并返回结果"
+		}, {
+			"trigger": "base.array.unshift添加元素",
+			"contents": "${1:len}=${2:arrayObj}.unshift(${2:newelement1},${4:newelement2});//向数组的开头添加一个或更多元素，并返回新的长度"
+		}, {
+			"trigger": "base.array.valueOf原始值",
+			"contents": "${1:obj}=${2:arrayObj}.valueOf();//返回数组对象的原始值"
+		},
+
+		/**Math**/
+
+		{
+			"trigger": "base.math.abs绝对值",
+			"contents": "${1:num}=${2:numObj}.abs(${3:x});//返回数的绝对值"
+		}, {
+			"trigger": "base.math.acos反余弦值",
+			"contents": "${1:num}=${2:numObj}.acos(${3:x});//返回数的反余弦值"
+		}, {
+			"trigger": "base.math.asin反正弦值",
+			"contents": "${1:num}=${2:numObj}.asin(${3:x});//返回数的反正弦值"
+		}, {
+			"trigger": "base.math.atan反正切值",
+			"contents": "${1:num}=${2:numObj}.atan(${3:x});//以介于 -PI/2 与 PI/2 弧度之间的数值来返回 x 的反正切值"
+		}, {
+			"trigger": "base.math.atan2角度",
+			"contents": "${1:num}=${2:numObj}.atan2(${3:y},${4:x});//返回从 x 轴到点 (x,y) 的角度（介于 -PI/2 与 PI/2 弧度之间）"
+		}, {
+			"trigger": "base.math.ceil上舍入",
+			"contents": "${1:intNum}=${2:numObj}.ceil(${3:x});//对数进行上舍入"
+		}, {
+			"trigger": "base.math.cos余弦",
+			"contents": "${1:num}=${2:numObj}.cos(${3:x});//返回数的余弦"
+		}, {
+			"trigger": "base.math.exp指数",
+			"contents": "${1:num}=${2:numObj}.exp(${3:x});//返回 e 的指数"
+		}, {
+			"trigger": "base.math.floor下舍入",
+			"contents": "${1:num}=${2:numObj}.floor(${3:x});//对数进行下舍入"
+		}, {
+			"trigger": "base.math.log自然对数",
+			"contents": "${1:num}=${2:numObj}.log(${3:x});//返回数的自然对数（底为e）"
+		}, {
+			"trigger": "base.math.max最高值",
+			"contents": "${1:num}=${2:numObj}.max(${3:x},${4:y});//返回 x 和 y 中的最高值"
+		}, {
+			"trigger": "base.math.min最低值",
+			"contents": "${1:num}=${2:numObj}.min(${3:x},${4:y});//返回 x 和 y 中的最低值"
+		}, {
+			"trigger": "base.math.pow幂",
+			"contents": "${1:num}=${2:numObj}.pow(${3:x},${4:y});//返回 x 的 y 次幂"
+		}, {
+			"trigger": "base.math.random随机数",
+			"contents": "${1:num}=${2:numObj}.random();//返回 0 ~ 1 之间的随机数"
+		}, {
+			"trigger": "base.math.round四舍五入",
+			"contents": "${1:num}=${2:numObj}.round(${3:x});//把数四舍五入为最接近的整数"
+		}, {
+			"trigger": "base.math.sin正弦",
+			"contents": "${1:num}=${2:numObj}.sin(${3:x});//返回数的正弦"
+		}, {
+			"trigger": "base.math.sqrt平方根",
+			"contents": "${1:num}=${2:numObj}.sqrt(${3:x});//返回数的平方根"
+		}, {
+			"trigger": "base.math.tan正切",
+			"contents": "${1:num}=${2:numObj}.tan(${3:x});//返回角的正切"
+		}, {
+			"trigger": "base.math.toSource源代码",
+			"contents": "${1:num}=${2:numObj}.toSource();//返回该对象的源代码"
+		}, {
+			"trigger": "base.math.valueOf原始值",
+			"contents": "${1:num}=${2:numObj}.valueOf();//返回 Math 对象的原始值"
+		},
+	]
+}
