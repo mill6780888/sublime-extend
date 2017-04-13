@@ -5,16 +5,16 @@
 
 		{
 			"trigger": "base.array.concat连接多个数组",
-			"contents": "${1:arr}=${2:arrayObj}.concat(${2:arrayX},${4:arrayX},${5:......});//连接两个或更多的数组，并返回结果"
+			"contents": "${1:arr}=${2:arrayObj}.concat(${3:arrayX},${4:arrayX},${5:......});//连接两个或更多的数组，并返回结果"
 		}, {
 			"trigger": "base.array.join合并为字符串",
-			"contents": "${1:str}=${2:arrayObj}.join(${2:separator});//把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔"
+			"contents": "${1:str}=${2:arrayObj}.join(${3:separator});//把数组的所有元素放入一个字符串。元素通过指定的分隔符进行分隔"
 		}, {
 			"trigger": "base.array.pop删除最后元素",
 			"contents": "${1:last}=${2:arrayObj}.pop();//删除并返回数组的最后一个元素"
 		}, {
 			"trigger": "base.array.push添加元素",
-			"contents": "${1:len}=${2:arrayObj}.push(${2:newelement1},${4:newelement2},${5:....});//向数组的末尾添加一个或更多元素，并返回新的长度"
+			"contents": "${1:len}=${2:arrayObj}.push(${3:newelement1},${4:newelement2},${5:....});//向数组的末尾添加一个或更多元素，并返回新的长度"
 		}, {
 			"trigger": "base.array.reverse颠倒顺序",
 			"contents": "${1:arr}=${2:arrayObj}.reverse();//颠倒数组中元素的顺序"
@@ -23,13 +23,13 @@
 			"contents": "${1:first}=${2:arrayObj}.shift();//删除并返回数组的第一个元素"
 		}, {
 			"trigger": "base.array.slice选定的元素",
-			"contents": "${1:arr}=${2:arrayObj}.slice(${2:start},${4:end});//从某个已有的数组返回选定的元素"
+			"contents": "${1:arr}=${2:arrayObj}.slice(${3:start},${4:end});//从某个已有的数组返回选定的元素"
 		}, {
 			"trigger": "base.array.sort排序",
-			"contents": "${1:arr}=${2:arrayObj}.sort(${2:[sortby]});//对数组的元素进行排序"
+			"contents": "${1:arr}=${2:arrayObj}.sort(${3:[sortby]});//对数组的元素进行排序"
 		}, {
 			"trigger": "base.array.splice删除并添加元素",
-			"contents": "${1:arr}=${2:arrayObj}.splice(${2:index},${4:howmany},${5:item1},${6:.....});//删除元素，并向数组添加新元素"
+			"contents": "${1:arr}=${2:arrayObj}.splice(${3:index},${4:howmany},${5:item1},${6:.....});//删除元素，并向数组添加新元素"
 		}, {
 			"trigger": "base.array.toSource对象的源代码",
 			"contents": "${1:str}=${2:arrayObj}.toSource();//返回该对象的源代码"
@@ -41,7 +41,7 @@
 			"contents": "${1:str}=${2:arrayObj}.toLocaleString();//把数组转换为本地数组，并返回结果"
 		}, {
 			"trigger": "base.array.unshift添加元素",
-			"contents": "${1:len}=${2:arrayObj}.unshift(${2:newelement1},${4:newelement2});//向数组的开头添加一个或更多元素，并返回新的长度"
+			"contents": "${1:len}=${2:arrayObj}.unshift(${3:newelement1},${4:newelement2});//向数组的开头添加一个或更多元素，并返回新的长度"
 		}, {
 			"trigger": "base.array.valueOf原始值",
 			"contents": "${1:obj}=${2:arrayObj}.valueOf();//返回数组对象的原始值"

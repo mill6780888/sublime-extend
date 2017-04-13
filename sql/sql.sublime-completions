@@ -1,77 +1,369 @@
 {
-   "scope": "source.sql",
+	"scope": "source.sql",
 
-   "completions":
-   [
-      /**循环控制**/
-      { "trigger": "mysql-date-DAYOFWEEK星期几", "contents": "DAYOFWEEK(${1:'2017-03-30'})-1" },
-      { "trigger": "mysql-date-WEEKDAY星期几", "contents": "WEEKDAY(${1:'2017-03-30 22:23:00'})+1" },
-      { "trigger": "mysql-date-DAYOFMONTH日-月", "contents": "DAYOFMONTH(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-DAYOFYEAR日-年", "contents": "DAYOFYEAR(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-MONTH月", "contents": "MONTH(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-DAYNAME日", "contents": "DAYNAME(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-MONTHNAME月", "contents": "MONTHNAME(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-QUARTER季度", "contents": "QUARTER(${1:'2017-03-30'})" },
-      { "trigger": "mysql-date-WEEK周-年", "contents": "WEEK(${1:'2017-03-30'},${2:1})#周一开始" },
-      { "trigger": "mysql-date-YEAR年", "contents": "YEAR(${1:'2017-03-30'},${2:1})#周一开始" },
-      { "trigger": "mysql-date-HOUR小时", "contents": "HOUR(${1:'2017-3-30 14:32:08'})" },
-      { "trigger": "mysql-date-MINUTE分钟", "contents": "MINUTE(${1:'2017-3-30 14:32:08'})" },
-      { "trigger": "mysql-date-SECOND秒", "contents": "SECOND(${1:'2017-3-30 14:32:08'})" },
-      { "trigger": "mysql-date-PERIOD_ADD增加月", "contents": "PERIOD_ADD(${1:9912},${2:2})#YYMM|YYYYMM" },
-      { "trigger": "mysql-date-PERIOD_DIFF相差月", "contents": "PERIOD_DIFF(${1:9912},${2:201211})#YYMM|YYYYMM" },
-      { "trigger": "mysql-date-DATE_ADD日期添加", "contents": "DATE_ADD(${1:'1997-12-31 23:59:59'},INTERVAL ${2:'1:1'} ${3:MINUTE_SECOND})" },
-      { "trigger": "mysql-date-DATE_SUB日期减少", "contents": "DATE_SUB(${1:'1997-12-31 23:59:59'},INTERVAL ${2:'1:1'} ${3:MINUTE_SECOND})" },
-      { "trigger": "mysql-date-EXTRACT日期提取", "contents": "EXTRACT(${1:YEAR} FROM ${2:'1999-07-02'})" },
-      { "trigger": "mysql-date-TO_DAYS天数-今天", "contents": "TO_DAYS(950501)" },
-      { "trigger": "mysql-date-DATE_FORMAT格式化", "contents": "DATE_FORMAT(${1:'1997-10-04 22:23:00'},${2:'%W %M %Y'})" },
-      { "trigger": "mysql-date-TIME_FORMAT格式化", "contents": "TIME_FORMAT(${1:'1997-10-04 22:23:00'},${2:'%W %M %Y'})" },
-      { "trigger": "mysql-date-CURDATE当前日期", "contents": "CURDATE()" },
-      { "trigger": "mysql-date-CURRENT_TIME当前时间", "contents": "CURRENT_TIME()" },
-      { "trigger": "mysql-date-NOW当前日期时间", "contents": "NOW()" },
-      { "trigger": "mysql-date-SYSDATE当前日期时间", "contents": "SYSDATE()" },
+	"completions": [
+		/**循环控制**/
+		{
+			"trigger": "mysql-date-DAYOFWEEK星期几",
+			"contents": "DAYOFWEEK(${1:'2017-03-30'})-1"
+		}, {
+			"trigger": "mysql-date-WEEKDAY星期几",
+			"contents": "WEEKDAY(${1:'2017-03-30 22:23:00'})+1"
+		}, {
+			"trigger": "mysql-date-DAYOFMONTH日-月",
+			"contents": "DAYOFMONTH(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-DAYOFYEAR日-年",
+			"contents": "DAYOFYEAR(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-MONTH月",
+			"contents": "MONTH(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-DAYNAME日",
+			"contents": "DAYNAME(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-MONTHNAME月",
+			"contents": "MONTHNAME(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-QUARTER季度",
+			"contents": "QUARTER(${1:'2017-03-30'})"
+		}, {
+			"trigger": "mysql-date-WEEK周-年",
+			"contents": "WEEK(${1:'2017-03-30'},${2:1})#周一开始"
+		}, {
+			"trigger": "mysql-date-YEAR年",
+			"contents": "YEAR(${1:'2017-03-30'},${2:1})#周一开始"
+		}, {
+			"trigger": "mysql-date-HOUR小时",
+			"contents": "HOUR(${1:'2017-3-30 14:32:08'})"
+		}, {
+			"trigger": "mysql-date-MINUTE分钟",
+			"contents": "MINUTE(${1:'2017-3-30 14:32:08'})"
+		}, {
+			"trigger": "mysql-date-SECOND秒",
+			"contents": "SECOND(${1:'2017-3-30 14:32:08'})"
+		}, {
+			"trigger": "mysql-date-PERIOD_ADD增加月",
+			"contents": "PERIOD_ADD(${1:9912},${2:2})#YYMM|YYYYMM"
+		}, {
+			"trigger": "mysql-date-PERIOD_DIFF相差月",
+			"contents": "PERIOD_DIFF(${1:9912},${2:201211})#YYMM|YYYYMM"
+		}, {
+			"trigger": "mysql-date-DATE_ADD日期添加",
+			"contents": "DATE_ADD(${1:'1997-12-31 23:59:59'},INTERVAL ${2:'1:1'} ${3:MINUTE_SECOND})"
+		}, {
+			"trigger": "mysql-date-DATE_SUB日期减少",
+			"contents": "DATE_SUB(${1:'1997-12-31 23:59:59'},INTERVAL ${2:'1:1'} ${3:MINUTE_SECOND})"
+		}, {
+			"trigger": "mysql-date-EXTRACT日期提取",
+			"contents": "EXTRACT(${1:YEAR} FROM ${2:'1999-07-02'})"
+		}, {
+			"trigger": "mysql-date-TO_DAYS天数-今天",
+			"contents": "TO_DAYS(950501)"
+		}, {
+			"trigger": "mysql-date-DATE_FORMAT格式化",
+			"contents": "DATE_FORMAT(${1:'1997-10-04 22:23:00'},${2:'%W %M %Y'})"
+		}, {
+			"trigger": "mysql-date-TIME_FORMAT格式化",
+			"contents": "TIME_FORMAT(${1:'1997-10-04 22:23:00'},${2:'%W %M %Y'})"
+		}, {
+			"trigger": "mysql-date-CURDATE当前日期",
+			"contents": "CURDATE()"
+		}, {
+			"trigger": "mysql-date-CURRENT_TIME当前时间",
+			"contents": "CURRENT_TIME()"
+		}, {
+			"trigger": "mysql-date-NOW当前日期时间",
+			"contents": "NOW()"
+		}, {
+			"trigger": "mysql-date-SYSDATE当前日期时间",
+			"contents": "SYSDATE()"
+		},
 
-      { "trigger": "mysql-const-SECOND-秒", "contents": "SECOND" },
-	{ "trigger": "mysql-const-MINUTE-分钟", "contents": "MINUTE" },
-	{ "trigger": "mysql-const-HOUR-时间", "contents": "HOUR" },
-	{ "trigger": "mysql-const-DAY-天", "contents": "DAY" },
-	{ "trigger": "mysql-const-MONTH-月", "contents": "MONTH" },
-	{ "trigger": "mysql-const-YEAR-年", "contents": "YEAR" },
-	{ "trigger": "mysql-const-MINUTE_SECOND-分钟和秒", "contents": "MINUTE_SECOND" },
-	{ "trigger": "mysql-const-HOUR_MINUTE-小时和分钟", "contents": "HOUR_MINUTE" },
-	{ "trigger": "mysql-const-DAY_HOUR-天和小时", "contents": "DAY_HOUR" },
-	{ "trigger": "mysql-const-YEAR_MONTH-年和月", "contents": "YEAR_MONTH" },
-	{ "trigger": "mysql-const-HOUR_SECOND-小时&分钟，", "contents": "HOUR_SECOND" },
-	{ "trigger": "mysql-const-DAY_MINUTE-天&小时&分钟", "contents": "DAY_MINUTE" },
-	{ "trigger": "mysql-const-DAY_SECOND-天&小时&分钟&秒", "contents": "DAY_SECOND" },
+		{
+			"trigger": "mysql-const-SECOND-秒",
+			"contents": "SECOND"
+		}, {
+			"trigger": "mysql-const-MINUTE-分钟",
+			"contents": "MINUTE"
+		}, {
+			"trigger": "mysql-const-HOUR-时间",
+			"contents": "HOUR"
+		}, {
+			"trigger": "mysql-const-DAY-天",
+			"contents": "DAY"
+		}, {
+			"trigger": "mysql-const-MONTH-月",
+			"contents": "MONTH"
+		}, {
+			"trigger": "mysql-const-YEAR-年",
+			"contents": "YEAR"
+		}, {
+			"trigger": "mysql-const-MINUTE_SECOND-分钟和秒",
+			"contents": "MINUTE_SECOND"
+		}, {
+			"trigger": "mysql-const-HOUR_MINUTE-小时和分钟",
+			"contents": "HOUR_MINUTE"
+		}, {
+			"trigger": "mysql-const-DAY_HOUR-天和小时",
+			"contents": "DAY_HOUR"
+		}, {
+			"trigger": "mysql-const-YEAR_MONTH-年和月",
+			"contents": "YEAR_MONTH"
+		}, {
+			"trigger": "mysql-const-HOUR_SECOND-小时&分钟，",
+			"contents": "HOUR_SECOND"
+		}, {
+			"trigger": "mysql-const-DAY_MINUTE-天&小时&分钟",
+			"contents": "DAY_MINUTE"
+		}, {
+			"trigger": "mysql-const-DAY_SECOND-天&小时&分钟&秒",
+			"contents": "DAY_SECOND"
+		},
 
-	{ "trigger": "mysql-format-%M月名字(January……December)", "contents": "%M" },
-	{ "trigger": "mysql-format-%W星期名字(Sunday……Saturday)", "contents": "%W" },
-	{ "trigger": "mysql-format-%D月份日期(1st&2nd&3rd&)", "contents": "%D" },
-	{ "trigger": "mysql-format-%Y年-4位", "contents": "%Y" },
-	{ "trigger": "mysql-format-%y年-2位", "contents": "%y" },
-	{ "trigger": "mysql-format-%a星期名字(Sun……Sat)", "contents": "%a" },
-	{ "trigger": "mysql-format-%d天数(00……31)", "contents": "%d" },
-	{ "trigger": "mysql-format-%e天数(0……31)", "contents": "%e" },
-	{ "trigger": "mysql-format-%m月&数字(01……12)", "contents": "%m" },
-	{ "trigger": "mysql-format-%c月&数字(1……12)", "contents": "%c" },
-	{ "trigger": "mysql-format-%b月份名字(Jan……Dec)", "contents": "%b" },
-	{ "trigger": "mysql-format-%j天数-年(001……366)", "contents": "%j" },
-	{ "trigger": "mysql-format-%H小时(00……23)", "contents": "%H" },
-	{ "trigger": "mysql-format-%k小时(0……23)", "contents": "%k" },
-	{ "trigger": "mysql-format-%h小时(01……12)", "contents": "%h" },
-	{ "trigger": "mysql-format-%I小时(01……12)", "contents": "%I" },
-	{ "trigger": "mysql-format-%l小时(1……12)", "contents": "%l" },
-	{ "trigger": "mysql-format-%i分钟&数字(00……59)", "contents": "%i" },
-	{ "trigger": "mysql-format-%r时-12", "contents": "%r" },
-	{ "trigger": "mysql-format-%T时-24", "contents": "%T" },
-	{ "trigger": "mysql-format-%S秒(00……59)", "contents": "%S" },
-	{ "trigger": "mysql-format-%s秒(00……59)", "contents": "%s" },
-	{ "trigger": "mysql-format-%pAM或PM", "contents": "%p" },
-	{ "trigger": "mysql-format-%w星期(0=Sunday", "contents": "%w" },
-	{ "trigger": "mysql-format-%U周-0", "contents": "%U" },
-	{ "trigger": "mysql-format-%u周-1", "contents": "%u" },
+		{
+			"trigger": "mysql-format-%M月名字(January……December)",
+			"contents": "%M"
+		}, {
+			"trigger": "mysql-format-%W星期名字(Sunday……Saturday)",
+			"contents": "%W"
+		}, {
+			"trigger": "mysql-format-%D月份日期(1st&2nd&3rd&)",
+			"contents": "%D"
+		}, {
+			"trigger": "mysql-format-%Y年-4位",
+			"contents": "%Y"
+		}, {
+			"trigger": "mysql-format-%y年-2位",
+			"contents": "%y"
+		}, {
+			"trigger": "mysql-format-%a星期名字(Sun……Sat)",
+			"contents": "%a"
+		}, {
+			"trigger": "mysql-format-%d天数(00……31)",
+			"contents": "%d"
+		}, {
+			"trigger": "mysql-format-%e天数(0……31)",
+			"contents": "%e"
+		}, {
+			"trigger": "mysql-format-%m月&数字(01……12)",
+			"contents": "%m"
+		}, {
+			"trigger": "mysql-format-%c月&数字(1……12)",
+			"contents": "%c"
+		}, {
+			"trigger": "mysql-format-%b月份名字(Jan……Dec)",
+			"contents": "%b"
+		}, {
+			"trigger": "mysql-format-%j天数-年(001……366)",
+			"contents": "%j"
+		}, {
+			"trigger": "mysql-format-%H小时(00……23)",
+			"contents": "%H"
+		}, {
+			"trigger": "mysql-format-%k小时(0……23)",
+			"contents": "%k"
+		}, {
+			"trigger": "mysql-format-%h小时(01……12)",
+			"contents": "%h"
+		}, {
+			"trigger": "mysql-format-%I小时(01……12)",
+			"contents": "%I"
+		}, {
+			"trigger": "mysql-format-%l小时(1……12)",
+			"contents": "%l"
+		}, {
+			"trigger": "mysql-format-%i分钟&数字(00……59)",
+			"contents": "%i"
+		}, {
+			"trigger": "mysql-format-%r时-12",
+			"contents": "%r"
+		}, {
+			"trigger": "mysql-format-%T时-24",
+			"contents": "%T"
+		}, {
+			"trigger": "mysql-format-%S秒(00……59)",
+			"contents": "%S"
+		}, {
+			"trigger": "mysql-format-%s秒(00……59)",
+			"contents": "%s"
+		}, {
+			"trigger": "mysql-format-%pAM或PM",
+			"contents": "%p"
+		}, {
+			"trigger": "mysql-format-%w星期(0=Sunday",
+			"contents": "%w"
+		}, {
+			"trigger": "mysql-format-%U周-0",
+			"contents": "%U"
+		}, {
+			"trigger": "mysql-format-%u周-1",
+			"contents": "%u"
+		},
 
-     
 
-   ]
+		/*********math*********/
+		{
+			"trigger": "mysql.math.ABS绝对值",
+			"contents": "ABS(${3:x});#返回x的绝对值"
+		}, {
+			"trigger": "mysql.math.BIN二进制",
+			"contents": "BIN(${3:x});#返回x的二进制（OCT返回八进制，HEX返回十六进制）"
+		}, {
+			"trigger": "mysql.math.CEILING上取整",
+			"contents": "CEILING(${3:x});#返回大于x的最小整数值"
+		}, {
+			"trigger": "mysql.math.EXPe的x次方",
+			"contents": "EXP(${3:x});#返回值e（自然对数的底）的x次方"
+		}, {
+			"trigger": "mysql.math.FLOOR下取整",
+			"contents": "FLOOR(${3:x});#返回小于x的最大整数值"
+		}, {
+			"trigger": "mysql.math.GREATEST最大值",
+			"contents": "GREATEST(${3:x1},${4:x2},${5:...},${6:xn});#返回集合中最大的值"
+		}, {
+			"trigger": "mysql.math.LEAST最小值",
+			"contents": "LEAST(${3:x1},${4:x2},${5:...},${6:xn});#返回集合中最小的值"
+		}, {
+			"trigger": "mysql.math.LN自然对数",
+			"contents": "LN(${3:x});#返回x的自然对数"
+		}, {
+			"trigger": "mysql.math.LOG对数",
+			"contents": "LOG(${3:x},${4:y});#返回x的以y为底的对数"
+		}, {
+			"trigger": "mysql.math.MOD余数",
+			"contents": "MOD(${3:x},${4:y});#返回x/y的模（余数）"
+		}, {
+			"trigger": "mysql.math.PI",
+			"contents": "PI();#返回pi的值（圆周率）"
+		}, {
+			"trigger": "mysql.math.RAND随机值",
+			"contents": "RAND();#返回０到１内的随机值,可以通过提供一个参数(种子)"
+		}, {
+			"trigger": "mysql.math.ROUND四舍五入",
+			"contents": "ROUND(${3:x},${4:y});#返回参数x的四舍五入的有y位小数的值"
+		}, {
+			"trigger": "mysql.math.SIGN",
+			"contents": "SIGN(${3:x});#返回代表数字x的符号的值"
+		}, {
+			"trigger": "mysql.math.SQRT平方根",
+			"contents": "SQRT(${3:x});#返回一个数的平方根"
+		}, {
+			"trigger": "mysql.math.TRUNCATE截短小数",
+			"contents": "TRUNCATE(${3:x},${4:y});#返回数字x截短为y位小数的结果"
+		},
+
+		/****group****/
+		{
+			"trigger": "mysql.groupAVG平均值",
+			"contents": "AVG(${3:col});#返回指定列的平均值"
+		}, {
+			"trigger": "mysql.groupCOUNT非NULL值个数",
+			"contents": "COUNT(${3:col});#返回指定列中非NULL值的个数"
+		},
+
+		{
+			"trigger": "mysql.groupMIN最小值",
+			"contents": "MIN(${3:col});#返回指定列的最小值"
+		}, {
+			"trigger": "mysql.groupMAX最大值",
+			"contents": "MAX(${3:col});#返回指定列的最大值"
+		}, {
+			"trigger": "mysql.groupSUM和",
+			"contents": "SUM(${3:col});#返回指定列的所有值之和"
+		}, {
+			"trigger": "mysql.groupGROUP_CONCAT连接",
+			"contents": "GROUP_CONCAT(${3:col});#返回由属于一组的列值连接组合而成的结果"
+		},
+		/**string**/
+
+		{
+			"trigger": "mysql.str.ASCII",
+			"contents": "ASCII(${3:char});#返回字符的ASCII码值"
+		}, {
+			"trigger": "mysql.str.BIT_LENGTH比特长度",
+			"contents": "BIT_LENGTH(${3:str});#返回字符串的比特长度"
+		}, {
+			"trigger": "mysql.str.CONCAT连接字符串",
+			"contents": "CONCAT(${3:s1},${4:s2...},${5:sn});#将s1,s2...,sn连接成字符串"
+		}, {
+			"trigger": "mysql.str.CONCAT_WS连接字符串sep间隔",
+			"contents": "CONCAT_WS(${3:sep},${4:s1},${5:s2...},${6:sn});#将s1,s2...,sn连接成字符串，并用sep字符间隔"
+		}, {
+			"trigger": "mysql.str.INSERT串替换字符串",
+			"contents": "INSERT(${3:str},${4:x},${5:y},${6:instr});#将字符串str从第x位置开始，y个字符长的子串替换为字符串instr，返回结果"
+		}, {
+			"trigger": "mysql.str.FIND_IN_SET返回str在list中的位置",
+			"contents": "FIND_IN_SET(${3:str},${4:list});#分析逗号分隔的list列表，如果发现str，返回str在list中的位置"
+		}, {
+			"trigger": "mysql.str.LCASE小写",
+			"contents": "LCASE(${3:str});#返回将字符串str中所有字符改变为小写后的结果"
+		}, {
+			"trigger": "mysql.str.LOWER小写",
+			"contents": "LOWER(${3:str});#返回将字符串str中所有字符改变为小写后的结果"
+		}, {
+			"trigger": "mysql.str.LEFT左边的x个字符",
+			"contents": "LEFT(${3:str},${4:x});#返回字符串str中最左边的x个字符"
+		}, {
+			"trigger": "mysql.str.LENGTH字符数",
+			"contents": "LENGTH(${3:s});#返回字符串str中的字符数"
+		}, {
+			"trigger": "mysql.str.LTRIM切掉开头的空格",
+			"contents": "LTRIM(${3:str});#从字符串str中切掉开头的空格"
+		}, {
+			"trigger": "mysql.str.substr",
+			"contents": "POSITION(${3:substr},${4:str});#返回子串substr在字符串str中第一次出现的位置"
+		}, {
+			"trigger": "mysql.str.QUOTE转义单引号",
+			"contents": "QUOTE(${3:str});#用反斜杠转义str中的单引号"
+		}, {
+			"trigger": "mysql.str.REPEAT重复x次",
+			"contents": "REPEAT(${3:str},${4:srchstr},${5:rplcstr});#返回字符串str重复x次的结果"
+		}, {
+			"trigger": "mysql.str.REVERSE颠倒字符串",
+			"contents": "REVERSE(${3:str});#返回颠倒字符串str的结果"
+		}, {
+			"trigger": "mysql.str.RIGHT右边的x个字符",
+			"contents": "RIGHT(${3:str},${4:x});#返回字符串str中最右边的x个字符"
+		}, {
+			"trigger": "mysql.str.RTRIM尾部的空格",
+			"contents": "RTRIM(${3:str});#返回字符串str尾部的空格"
+		}, {
+			"trigger": "mysql.str.STRCMP比较字符串",
+			"contents": "STRCMP(${3:s1},${4:s2});#比较字符串s1和s2"
+		}, {
+			"trigger": "mysql.str.TRIM首尾空格",
+			"contents": "TRIM(${3:str});#去除字符串首部和尾部的所有空格"
+		}, {
+			"trigger": "mysql.str.UCASE大写",
+			"contents": "UCASE(${3:str});#返回将字符串str中所有字符转变为大写后的结果"
+		}, {
+			"trigger": "mysql.str.UPPER大写",
+			"contents": "UPPER(${3:str});#返回将字符串str中所有字符转变为大写后的结果"
+		}, {
+			"trigger": "mysql.password.AES_ENCRYPT高级加密",
+			"contents": "AES_ENCRYPT(${3:str},${4:key});#返回用密钥key对字符串str利用高级加密标准算法加密后的结果，调用AES_ENCRYPT的结果是一个二进制字符串，以BLOB类型存储"
+		}, {
+			"trigger": "mysql.password.AES_DECRYPT高级解密",
+			"contents": "AES_DECRYPT(${3:str},${4:key});#返回用密钥key对字符串str利用高级加密标准算法解密后的结果"
+		}, {
+			"trigger": "mysql.password.DECODE解密",
+			"contents": "DECODE(${3:str},${4:key});#使用key作为密钥解密加密字符串str"
+		}, {
+			"trigger": "mysql.password.ENCRYPT加密",
+			"contents": "ENCRYPT(${3:str},${4:salt});#用关键词salt加密字符串str"
+		}, {
+			"trigger": "mysql.password.ENCODE加密",
+			"contents": "ENCODE(${3:str},${4:key});#使用key作为密钥加密字符串str结果是一个二进制字符串，它以BLOB类型存储"
+		}, {
+			"trigger": "mysql.password.MD5",
+			"contents": "MD5();#计算字符串str的MD5校验和"
+		}, {
+			"trigger": "mysql.password.PASSWORD不可逆加密",
+			"contents": "PASSWORD(${3:str});#返回字符串str的加密版本，这个加密过程是不可逆转的，和UNIX密码加密过程使用不同的算法。"
+		}, {
+			"trigger": "mysql.password.SHA安全散列算法",
+			"contents": "SHA();#计算字符串str的安全散列算法(SHA)"
+		},
+	]
 }

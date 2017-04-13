@@ -1,20 +1,18 @@
 let tplstr = `
 
 
-assert(value[, message])		测试 value 是否为真值
-assert.deepEqual(actual, expected[, message])		测试 actual 参数与 expected 参数是否深度相等。 原始值使用相等运算符（==）比较。
-assert.deepStrictEqual(actual, expected[, message])		首先，原始值使用全等运算符（===）比较。 其次，对象的比较包括检查它们的原型是否全等。
-assert.doesNotThrow(block[, error][, message])		当 assert.doesNotThrow() 被调用时，它会立即调用 block 函数
-assert.equal(actual, expected[, message])		使用相等运算符（==）测试 actual 参数与 expected 参数是否相等
-assert.fail(actual, expected, message, operator)		抛出 AssertionError
-assert.ifError(value)		如果 value 为真，则抛出 value
-assert.notDeepEqual(actual, expected[, message])		测试是否不深度相等
-assert.notDeepStrictEqual(actual, expected[, message])		测试是否不深度全等
-assert.notEqual(actual, expected[, message])		使用不等运算符（!=）测试是否不相等
-assert.notStrictEqual(actual, expected[, message])		使用不全等运算符（!==）测试是否不全等
-assert.ok(value[, message])		测试 value 是否为真值
-assert.strictEqual(actual, expected[, message])		使用全等运算符（===）测试是否全等
-assert.throws(block[, error][, message])		期望 block 函数抛出错误
+
+AES_ENCRYPT(str,key)		返回用密钥key对字符串str利用高级加密标准算法加密后的结果，调用AES_ENCRYPT的结果是一个二进制字符串，以BLOB类型存储
+AES_DECRYPT(str,key)		返回用密钥key对字符串str利用高级加密标准算法解密后的结果
+DECODE(str,key)		使用key作为密钥解密加密字符串str
+ENCRYPT(str,salt)		用关键词salt加密字符串str
+ENCODE(str,key)		使用key作为密钥加密字符串str结果是一个二进制字符串，它以BLOB类型存储
+MD5()		计算字符串str的MD5校验和
+PASSWORD(str)		返回字符串str的加密版本，这个加密过程是不可逆转的，和UNIX密码加密过程使用不同的算法。
+SHA()		计算字符串str的安全散列算法(SHA)
+
+
+
 
 
 
@@ -27,7 +25,7 @@ let [
       objAlias
   ] = 
    [
-      "nodejs.", 
+      "mysql.group", 
     ";//",
     "${2:numObj}."
    ];
