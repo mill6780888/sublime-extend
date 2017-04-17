@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+<property name="${1:service.dao.dataSource}" value="${2:DBCP2}"></property>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>spring-property-jilian</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.xml</scope>
+	<description>级联属性配置</description>
+
+</snippet>

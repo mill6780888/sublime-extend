@@ -1,0 +1,14 @@
+<snippet>
+    <content><![CDATA[
+<bean id="${1:car}" class="${2:com.atguigu.spring.helloworld.Car}">
+    <constructor-arg value="KUGA" index="1"></constructor-arg>
+    <constructor-arg value="ChangAnFord" index="0"></constructor-arg>
+    <constructor-arg value="250000" type="float"></constructor-arg>
+</bean>
+]]></content>
+    <tabTrigger>spring-constructor</tabTrigger>
+    <scope>text.xml</scope>
+    <description>构造器混合注入</description>
+</snippet>
+
+    

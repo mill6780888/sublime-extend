@@ -1,0 +1,8 @@
+{
+	"scope": "text.xml",
+
+	"completions": [{
+		"trigger": "xml.content文字实体",
+		"contents": "<![CDATA[${1:content}]]>"
+	}, ]
+}
