@@ -1,12 +1,8 @@
 {
-   "scope": "source.mcss",
+	"scope": "source.mcss",
 
-   "completions":
-   [
-      { "trigger": "linear\t线性过渡", "contents": "linear" },
-      { "trigger": "transition\t过渡", "contents": "transition" },
-      
-     
-
-   ]
+	"completions": [{
+		"trigger": "linear\t线性过渡",
+		"contents": "linear"
+	},{ "trigger": "action\tform", "contents": "action=\"$1\"$0" },]
 }
