@@ -1,0 +1,18 @@
+<snippet>
+	<content><![CDATA[
+/*
+static:相对定位并且位置参数无效
+relative:相对定位
+absolute:绝对于父元素
+fixed:绝对于浏览器
+*/
+position: absolute;
+top: 50%;
+left: 50%;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>position</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+	<description>定位</description>
+</snippet>

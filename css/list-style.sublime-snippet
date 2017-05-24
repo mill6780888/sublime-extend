@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+/* 列表样式 type position image */
+list-style:upper-alpha outside none;
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>list-style</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+	<description>定位</description>
+</snippet>
