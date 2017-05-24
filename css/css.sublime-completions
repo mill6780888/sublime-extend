@@ -1,8 +1,20 @@
 {
-	"scope": "source.mcss",
+	"scope": "source.css",
 
 	"completions": [{
-		"trigger": "linear\t线性过渡",
+		"trigger": "transition.linear\t线性过渡",
 		"contents": "linear"
-	},{ "trigger": "action\tform", "contents": "action=\"$1\"$0" },]
+	}, {
+		"trigger": "transition.ease\t平滑过渡",
+		"contents": "ease"
+	}, {
+		"trigger": "transition.ease-in\t由慢到快",
+		"contents": "ease-in"
+	}, {
+		"trigger": "transition.ease-out\t 由快到慢",
+		"contents": "ease-out"
+	}, {
+		"trigger": "important\t 提高优先级",
+		"contents": "!important"
+	}, ]
 }
