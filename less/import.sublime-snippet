@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+// 变量
+@themes: "${1:../../src/themes}";
+// 用法
+@import "${2:@{themes\}/tidal-wave.less}";
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>import</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css.less</scope>
+	<description>导入文件</description>
+</snippet>
