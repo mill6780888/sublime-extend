@@ -6,6 +6,6 @@ list-style:upper-alpha outside none;
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>list-style</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.css</scope>
+	<scope>source.mcss</scope>
 	<description>定位</description>
 </snippet>

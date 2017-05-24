@@ -1,8 +1,4 @@
-/**
-   yeoman生成工具的语法提示
 
-
-**/
 
 {
    "scope": "source.js",

@@ -1,9 +1,10 @@
 {
-   "scope": "source.css.less",
+   "scope": "source.mcss",
 
    "completions":
    [
-      { "trigger": "gulp.aaa", "contents": "gulp.src([${1:'client/templates/*.jade'}],${2:{\n   buffer:true,\n read:true,\n   base:\"${3:client写出时替换掉的部分}\"\n} })" },
+      { "trigger": "linear\t线性过渡", "contents": "linear" },
+      { "trigger": "transition\t过渡", "contents": "transition" },
       
      
 
