@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+/*不兼容IE10以下及火狐3以下;params:水平偏移 垂直偏移 模糊距离 颜色*/
+text-shadow:${1:1px} ${2:1px} ${3:1px} ${4:rgba(0,0,0,.3)};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>text-shadow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+	<description>文本阴影</description>
+</snippet>

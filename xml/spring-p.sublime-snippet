@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+<!-- xmlns:p="http://www.springframework.org/schema/p" -->
+<bean id="${1:user3}" class="com.atguigu.spring.helloworld.User"
+		p:cars-ref="${2:cars的引用}" p:userName="${3:userName}"></bean>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>spring-p</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.xml</scope>
+	<description>P命名空间</description>
+
+</snippet>

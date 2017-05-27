@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+/*
+property ： 属性 
+duration ： 持续时间 
+timing-function ： 动画类型 
+delay 延时：
+*/
+transition:${1:property} ${2:duration} ${3:timing-function} ${4:delay};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>transition</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css</scope>
+	<description>过度效果</description>
+</snippet>

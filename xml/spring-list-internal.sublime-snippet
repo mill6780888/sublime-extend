@@ -1,0 +1,17 @@
+<snippet>
+	<content><![CDATA[
+<property name="${1:cars}">
+    <!-- 使用 list 元素来装配集合属性 -->
+    <list>
+        <ref bean="car"/>
+        <ref bean="car2"/>
+    </list>
+</property>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>spring-list-internal</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.xml</scope>
+	<description>内部list集合</description>
+
+</snippet>

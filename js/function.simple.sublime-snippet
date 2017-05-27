@@ -1,14 +1,13 @@
 <snippet>
 	<content><![CDATA[
-if ( ${1:a in list} ):
-   ${2:print "1 - 变量 a 在给定的列表中 list 中"}
-else:
-   ${3:print "1 - 变量 a 不在给定的列表中 list 中"}
-
+def ${1:printme}( ${2:str} ):
+   "打印任何传入的字符串"
+   print $2;
+   return;
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>if.else</tabTrigger>
+	<tabTrigger>function.simple</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.python</scope>
-	<description>如果</description>
+	<description>简单函数</description>
 </snippet>

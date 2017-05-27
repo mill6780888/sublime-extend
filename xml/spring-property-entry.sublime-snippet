@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+<property name="${1:属性名}">
+    <!-- 内部 bean, 类似于匿名内部类对象. 不能被外部的 bean 来引用, 也没有必要设置 id 属性 -->
+    <bean class="${2:com.atguigu.spring.ref.Dao}">
+        <property name="dataSource" value="c3p0"></property>
+    </bean>
+</property>
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>spring-property-internal</tabTrigger> 
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>text.xml</scope>
+	<description>属性内部bean</description>
+
+</snippet>
