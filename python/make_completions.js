@@ -1,3 +1,5 @@
+// 方法	返回值	注释
+
 let tplstr = `
 
 
@@ -25,7 +27,7 @@ let [
       objAlias
   ] = 
    [
-      "mysql.group", 
+      "mysql.group.", 
     ";//",
     "${2:numObj}."
    ];
