@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-// 变量
+// 变量${1/^(\w)|(?:_(\w))/(?1\u$1:)(?2 \u$2:)/g}
 @themes: "${1:../../src/themes}";
 // 用法
 @import "${2:@{themes\}/tidal-wave.less}";
