@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+filter: alpha(opacity=${1:50}); /* internet explorer */ 
+-khtml-opacity: 0.$1;      /* khtml, old safari */ 
+-moz-opacity: 0.$1;       /* mozilla, netscape */ 
+opacity: 0.$1;           /* fx, safari, opera */ 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>transparent</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>透明度</description>
+</snippet>

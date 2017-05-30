@@ -1,0 +1,11 @@
+<snippet>
+    <content><![CDATA[
+while ${1:count < 5}:
+   TODO
+else:
+   TODO
+]]></content>
+    <tabTrigger>while</tabTrigger>
+    <scope>source.python</scope>
+    <description>循环</description>
+</snippet>

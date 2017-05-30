@@ -1,5 +1,5 @@
 {
-	"scope": "source.css",
+	"scope": "source.css,source.mcss",
 
 	"completions": [{
 		"trigger": "transition.linear\t线性过渡",
@@ -16,5 +16,68 @@
 	}, {
 		"trigger": "important\t 提高优先级",
 		"contents": "!important"
-	}, ]
+	}, 
+	/*伪元素*/
+	{ "trigger": "select.element\t激活元素", "contents": "${1:a}:active" },
+	{ "trigger": "select.element\t焦点元素", "contents": "${1:a}:focus" },
+	{ "trigger": "select.element\t鼠标悬停", "contents": "${1:a}:hover" },
+	{ "trigger": "select.element\t未访问", "contents": "${1:a}:link" },
+	{ "trigger": "select.element\t已访问", "contents": "${1:a}:visited" },
+	{ "trigger": "select.element\t首子元素", "contents": "${1:a}:first-child" },
+	{ "trigger": "select.element\t语言", "contents": "${1:a}:lang" },
+
+	/*背景*/
+	{ "trigger": "background-position\t背景定位", "contents": "background-position:${1:66% 33%};/*背景定位*/" },
+	{ "trigger": "background-repeat\t背景重复", "contents": "background-repeat: ${1:repeat-y};/*背景重复*/" },
+	{ "trigger": "background-attachment\t背景不滚动", "contents": "background-attachment:fixed;/*背景不滚动*/" },
+	{ "trigger": "background-image\t背景图片", "contents": "background-image: url(${1:bgimage.gif});/*背景图片*/" },
+	{ "trigger": "background-color\t背景颜色", "contents": "background-color:${1:#00ff00};/*背景颜色*/" },
+	{ "trigger": "background-clip\t背景剪裁点", "contents": "background-clip:${2:content-box};/*背景剪裁点*/" },
+	{ "trigger": "background-origin\t背景定位点", "contents": "background-origin:${1:content-box};/*背景定位点*/" },
+	{ "trigger": "background-size\t背景大小", "contents": "background-size:${1:80px 60px};/*背景大小*/" },
+	{ "trigger": "background\t背景", "contents": "background-size:${1:color position size repeat origin clip attachment image};/*背景*/" },
+	/*文本*/
+	{ "trigger": "text-indent\t缩进", "contents": "text-indent:${1:50px};/*缩进*/" },
+	{ "trigger": "text-align\t对齐", "contents": "text-align:${1:center};/*对齐*/" },
+	{ "trigger": "word-spacing\t单词间距", "contents": "word-spacing: ${1:30px};/*单词间距*/" },
+	{ "trigger": "letter-spacing\t字符间距", "contents": "letter-spacing: ${1:30px};/*字符间距*/" },
+	{ "trigger": "text-transform\t文本转换", "contents": "text-transform: ${1:capitalize};/*文本转换*/" },
+	{ "trigger": "text-decoration\t文本装饰", "contents": "text-decoration: ${1:overline};/*文本装饰*/" },
+	{ "trigger": "white-space\t处理空白", "contents": "white-space: nowrap;/*处理空白*/" },
+	{ "trigger": "direction\t文本从右至左", "contents": "direction: rtl;/*文本从右至左*/" },
+	/*字体*/
+	{ "trigger": "font-family\t设置字体", "contents": "font-family:Microsoft YaHei;/*设置字体*/" },
+	/*常量*/
+	{ "trigger": "center\t居中", "contents": "center" },
+	{ "trigger": "normal\t正常", "contents": "normal" },
+	{ "trigger": "top\t顶对齐", "contents": "top" },
+	{ "trigger": "bottom\t底对齐", "contents": "bottom" },
+	{ "trigger": "right\t右对齐", "contents": "right" },
+	{ "trigger": "left\t左对齐", "contents": "left" },
+	{ "trigger": "repeat\t重复", "contents": "repeat" },
+	{ "trigger": "no-repeat\t不重复", "contents": "no-repeat" },
+	{ "trigger": "repeat-x\t重复", "contents": "repeat-x" },
+	{ "trigger": "repeat-y\t重复", "contents": "repeat-y" },
+	{ "trigger": "inherit\t继承", "contents": "inherit" },
+	{ "trigger": "none\t无", "contents": "none" },
+	{ "trigger": "transparent\t透明", "contents": "transparent" },
+	{ "trigger": "padding-box\t内边距框", "contents": "padding-box" },
+	{ "trigger": "border-box\t边框盒", "contents": "border-box" },
+	{ "trigger": "content-box\t内容框", "contents": "content-box" },
+	{ "trigger": "cover\t全覆盖溢出", "contents": "cover" },
+	{ "trigger": "contain\t最大化", "contents": "contain" },
+	{ "trigger": "justify\t两端对齐", "contents": "justify" },
+	{ "trigger": "capitalize\t驼峰", "contents": "capitalize" },
+	{ "trigger": "uppercase\t大写", "contents": "uppercase" },
+	{ "trigger": "lowercase\t小写", "contents": "lowercase" },
+
+	{ "trigger": "underline\t下划线", "contents": "underline" },
+	{ "trigger": "overline\t上划线", "contents": "overline" },
+	{ "trigger": "line-through\t删除线", "contents": "line-through" },
+	{ "trigger": "blink\t闪烁文本。", "contents": "blink" },
+	{ "trigger": "pre\t保留空白", "contents": "pre" },
+	{ "trigger": "nowrap\t不换行", "contents": "nowrap" },
+	{ "trigger": "pre-wrap\t保留空白正常换行", "contents": "pre-wrap" },
+	{ "trigger": "pre-line\t合并空白保留换行", "contents": "pre-line" },
+	]
 }

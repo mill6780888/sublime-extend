@@ -1,0 +1,12 @@
+<snippet>
+    <content>
+      <![CDATA[
+<?php ${1/^1$/刘剑/g} ${1/^2$/钟茹/g}
+  $1 $a
+}
+?>
+]]></content>
+    <tabTrigger>document</tabTrigger>
+    <scope>source.php</scope>
+    <description>文档结构</description>
+</snippet>

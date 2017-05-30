@@ -8,6 +8,6 @@ transform: ${1:translate(2,5)} ${2:rotate(0)} ${3:scale(1.5)};
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>transform</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<scope>source.css</scope>
+	<scope>source.css,source.mcss</scope>
 	<description>转换</description>
 </snippet>
