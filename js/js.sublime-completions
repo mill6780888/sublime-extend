@@ -21,5 +21,6 @@
       { "trigger": "Object.访问器属性", "contents": "Object.defineProperty(book, \"year\", {\n    get: function () {//可读属性\n        return this._year;\n    },\n    set: function (newValue) {//可写\n        if (newValue > 2004) {//判断条件满足则写入\n            this._year = newValue;\n            this.edition += newValue - 2004;\n        }\n    },\n    configurable: false,//不可设置,不可delete删除\n enumerable:false//不遍历\n\n});" },
       { "trigger": "Object.原型属性值", "contents": "Object.getOwnPropertyNames(Person.prototype);" },
       { "trigger": "Object.原型属性值", "contents": "Object.keys(Person.prototype);" },
+		{ "trigger": "setInterval\t周期性事件", "contents": "setInterval(${1:callback},${2:5000});" },
    ]
 }
