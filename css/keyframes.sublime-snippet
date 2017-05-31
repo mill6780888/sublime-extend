@@ -1,0 +1,33 @@
+<snippet>
+	<content><![CDATA[
+    /*定义动画*/
+@keyframes ${1:mymove}
+{
+from {$2}
+to {$3}
+}
+
+@-moz-keyframes ${1:mymove} /* Firefox */
+{
+from {$2}
+to {$3}
+}
+
+@-webkit-keyframes ${1:mymove} /* Safari 和 Chrome */
+{
+from {$2}
+to {$3}
+}
+
+@-o-keyframes ${1:mymove} /* Opera */
+{
+from {$2}
+to {$3}
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>keyframes</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>定义动画</description>
+</snippet>
