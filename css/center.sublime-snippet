@@ -1,11 +1,13 @@
 <snippet>
 	<content><![CDATA[
-/* 列表样式 type position image */
-list-style:upper-alpha outside none;
+margin-left:auto;
+margin-right:auto;
+text-align:left;/*兼容IE5*/
+width:70%;/*宽度100%无效果*/
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>list-style</tabTrigger>
+	<tabTrigger>margin-auto</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.css,source.mcss</scope>
-	<description>定位</description>
+	<description>居中</description>
 </snippet>

@@ -1,11 +1,12 @@
 <snippet>
 	<content><![CDATA[
-/* 列表样式 type position image */
-list-style:upper-alpha outside none;
+min-height: 6.5em;  
+display: table-cell;  
+vertical-align: middle;  
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>list-style</tabTrigger>
+	<tabTrigger>middle</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.css,source.mcss</scope>
-	<description>定位</description>
+	<description>垂直居中</description>
 </snippet>

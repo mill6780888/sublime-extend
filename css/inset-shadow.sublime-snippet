@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+-moz-box-shadow: inset ${1:2}px ${2:0} ${3:4}px ${4:#000};  
+-webkit-box-shadow: inset ${1:2}px ${2:0} ${3:4}px ${4:#000};  
+box-shadow: inset ${1:2}px ${2:0} ${3:4}px ${4:#000};  
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>inset.shadow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>内阴影</description>
+</snippet>

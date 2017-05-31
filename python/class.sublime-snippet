@@ -26,6 +26,6 @@ class ${1:classname}:
       return 'str(obj)可以获取描述'
 ]]></content>
     <tabTrigger>class</tabTrigger>
-    <scope>source.py</scope>
+    <scope>source.python</scope>
     <description>创建一个类</description>
 </snippet>

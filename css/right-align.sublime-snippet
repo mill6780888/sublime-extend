@@ -1,11 +1,12 @@
 <snippet>
 	<content><![CDATA[
-/* 列表样式 type position image */
-list-style:upper-alpha outside none;
+/*右对齐*/
+position:absolute;
+right:0px;
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>list-style</tabTrigger>
+	<tabTrigger>right</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.css,source.mcss</scope>
-	<description>定位</description>
+	<description>定位右对齐</description>
 </snippet>

@@ -1,5 +1,5 @@
 {
-	"scope": "source.css",
+	"scope": "source.css,source.mcss",
 
 	"completions": [{
 		"trigger": "transition.linear\t线性过渡",
@@ -16,5 +16,95 @@
 	}, {
 		"trigger": "important\t 提高优先级",
 		"contents": "!important"
-	}, ]
+	}, {
+		"trigger": "opacity\t 透明度",
+		"contents": "opacity:${1:0.5};"
+	}, 
+	/*伪元素*/
+	{ "trigger": "select.element\t激活元素", "contents": "${1:a}:active" },
+	{ "trigger": "select.element\t焦点元素", "contents": "${1:a}:focus" },
+	{ "trigger": "select.element\t鼠标悬停", "contents": "${1:a}:hover" },
+	{ "trigger": "select.element\t未访问", "contents": "${1:a}:link" },
+	{ "trigger": "select.element\t已访问", "contents": "${1:a}:visited" },
+	{ "trigger": "select.element\t首子元素", "contents": "${1:a}:first-child" },
+	{ "trigger": "select.element\t语言", "contents": "${1:a}:lang" },
+
+	/*背景*/
+	{ "trigger": "background-position\t背景定位", "contents": "background-position:${1:66% 33%};/*背景定位*/" },
+	{ "trigger": "background-repeat\t背景重复", "contents": "background-repeat: ${1:repeat-y};/*背景重复*/" },
+	{ "trigger": "background-attachment\t背景不滚动", "contents": "background-attachment:fixed;/*背景不滚动*/" },
+	{ "trigger": "background-image\t背景图片", "contents": "background-image: url(${1:bgimage.gif});/*背景图片*/" },
+	{ "trigger": "background-color\t背景颜色", "contents": "background-color:${1:#00ff00};/*背景颜色*/" },
+	{ "trigger": "background-clip\t背景剪裁点", "contents": "background-clip:${2:content-box};/*背景剪裁点*/" },
+	{ "trigger": "background-origin\t背景定位点", "contents": "background-origin:${1:content-box};/*背景定位点*/" },
+	{ "trigger": "background-size\t背景大小", "contents": "background-size:${1:80px 60px};/*背景大小*/" },
+	{ "trigger": "background\t背景", "contents": "background-size:${1:color position size repeat origin clip attachment image};/*背景*/" },
+	/*文本*/
+	{ "trigger": "text-indent\t缩进", "contents": "text-indent:${1:50px};/*缩进*/" },
+	{ "trigger": "text-align\t对齐", "contents": "text-align:${1:center};/*对齐*/" },
+	{ "trigger": "text-word-spacing\t单词间距", "contents": "word-spacing: ${1:30px};/*单词间距*/" },
+	{ "trigger": "text-letter-spacing\t字符间距", "contents": "letter-spacing: ${1:30px};/*字符间距*/" },
+	{ "trigger": "text-transform\t文本转换", "contents": "text-transform: ${1:capitalize};/*文本转换*/" },
+	{ "trigger": "text-decoration\t文本装饰", "contents": "text-decoration: ${1:overline};/*文本装饰*/" },
+	{ "trigger": "text-white-space\t处理空白", "contents": "white-space: nowrap;/*处理空白*/" },
+	{ "trigger": "text-direction\t文本从右至左", "contents": "direction: rtl;/*文本从右至左*/" },
+	/*定位*/
+	{ "trigger": "absolute\t绝对定位", "contents": "position:absolute;/*绝对定位*/" },
+	{ "trigger": "fixed\t固定定位", "contents": "position:fixed;/*固定定位*/" },
+	{ "trigger": "relative\t相对定位", "contents": "position:relative;/*相对定位*/" },
+	{ "trigger": "float\t浮动", "contents": "float:right;/*浮动*/" },
+	/*内容*/
+	{ "trigger": "counter-reset\t重置计数器", "contents": "counter-reset:${1:name} ${2:num};/*重置计数器*/" },
+	{ "trigger": "counter-increment\t计算器累计", "contents": "counter-increment:${1:name} ${2:num};/*计算器累计*/" },
+	{ "trigger": "content-counter\t引用计数器", "contents": "content:\"Section \" counter(section) \". \";/*引用计数器*/" },
+	{ "trigger": "content-quotes\t嵌套引号类型", "contents": "quotes: '<' '>' \"'\" \"'\";/*嵌套引号类型*/" },
+
+	/*字体*/
+	{ "trigger": "font-family\t设置字体", "contents": "font-family:Microsoft YaHei;/*设置字体*/" },
+	{ "trigger": "font-family\t字体倾斜", "contents": "font-style:${1:normal};/*字体倾斜*/" },
+	{ "trigger": "font-size\t字体大小", "contents": "font-size:${1:200%};/*字体大小*/" },
+	{ "trigger": "font-variant\t小型大写", "contents": "font-variant:small-caps;/*小型大写显示*/" },
+	{ "trigger": "font-weight\t字体粗细", "contents": "font-weight:bold;/*字体粗细*/" },
+	/*光标*/
+	{ "trigger": "cursor-pointer\t光标手型", "contents": "cursor:pointer;/*光标手型*/" },
+	{ "trigger": "cursor-wait\t光标等待", "contents": "cursor:wait;/*光标等待*/" },
+	{ "trigger": "cursor-help\t光标帮助", "contents": "cursor:help;/*光标帮助*/" },
+	/*常量*/
+	{ "trigger": "const.center\t居中", "contents": "center" },
+	{ "trigger": "const.normal\t正常", "contents": "normal" },
+	{ "trigger": "const.top\t顶对齐", "contents": "top" },
+	{ "trigger": "const.bottom\t底对齐", "contents": "bottom" },
+	{ "trigger": "const.right\t右对齐", "contents": "right" },
+	{ "trigger": "const.left\t左对齐", "contents": "left" },
+	{ "trigger": "const.repeat\t重复", "contents": "repeat" },
+	{ "trigger": "const.no-repeat\t不重复", "contents": "no-repeat" },
+	{ "trigger": "const.repeat-x\t重复", "contents": "repeat-x" },
+	{ "trigger": "const.repeat-y\t重复", "contents": "repeat-y" },
+	{ "trigger": "const.inherit\t继承", "contents": "inherit" },
+	{ "trigger": "const.none\t无", "contents": "none" },
+	{ "trigger": "const.transparent\t透明", "contents": "transparent" },
+	{ "trigger": "const.padding-box\t内边距框", "contents": "padding-box" },
+	{ "trigger": "const.border-box\t边框盒", "contents": "border-box" },
+	{ "trigger": "const.content-box\t内容框", "contents": "content-box" },
+	{ "trigger": "const.cover\t全覆盖溢出", "contents": "cover" },
+	{ "trigger": "const.contain\t最大化", "contents": "contain" },
+	{ "trigger": "const.justify\t两端对齐", "contents": "justify" },
+	{ "trigger": "const.capitalize\t驼峰", "contents": "capitalize" },
+	{ "trigger": "const.uppercase\t大写", "contents": "uppercase" },
+	{ "trigger": "const.lowercase\t小写", "contents": "lowercase" },
+	{ "trigger": "const.italic\t斜体", "contents": "italic" },
+	{ "trigger": "const.oblique\t倾斜", "contents": "oblique" },
+	{ "trigger": "const.bold\t粗体", "contents": "bold" },
+	{ "trigger": "const.bolder\t大粗体", "contents": "bolder" },
+	{ "trigger": "const.lighter\t细体", "contents": "lighter" },
+
+	{ "trigger": "const.underline\t下划线", "contents": "underline" },
+	{ "trigger": "const.overline\t上划线", "contents": "overline" },
+	{ "trigger": "const.line-through\t删除线", "contents": "line-through" },
+	{ "trigger": "const.blink\t闪烁文本。", "contents": "blink" },
+	{ "trigger": "const.pre\t保留空白", "contents": "pre" },
+	{ "trigger": "const.nowrap\t不换行", "contents": "nowrap" },
+	{ "trigger": "const.pre-wrap\t保留空白正常换行", "contents": "pre-wrap" },
+	{ "trigger": "const.pre-line\t合并空白保留换行", "contents": "pre-line" },
+	]
 }

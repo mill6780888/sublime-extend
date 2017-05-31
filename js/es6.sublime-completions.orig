@@ -1,6 +1,9 @@
 {
+<<<<<<< HEAD
    "scope": "source.js",
-
+=======
+   "scope": "source.temp",
+>>>>>>> b059b85eded68f240ffd3021db711897f9a92db4
 
    "completions":
    [

@@ -1,0 +1,16 @@
+<snippet>
+	<content><![CDATA[
+h1 { /*h1隐藏为log标志*/
+    text-indent: -9999px;  
+    margin: 0 auto;  
+    width: $2px;  
+    height: $3px;  
+    background: transparent url("${1:images/logo.png}") no-repeat scroll;  
+} 
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>h1log</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>h1隐藏为log</description>
+</snippet>

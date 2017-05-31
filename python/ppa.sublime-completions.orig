@@ -1,7 +1,9 @@
 {
-
+<<<<<<< HEAD
+   "scope": "source.python",
+=======
    "scope": "source.py,source.python",
-
+>>>>>>> b059b85eded68f240ffd3021db711897f9a92db4
 
    "completions":
    [

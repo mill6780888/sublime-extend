@@ -1,15 +1,16 @@
+// 方法	返回值	注释
+
 let tplstr = `
 
 
 
-AES_ENCRYPT(str,key)		返回用密钥key对字符串str利用高级加密标准算法加密后的结果，调用AES_ENCRYPT的结果是一个二进制字符串，以BLOB类型存储
-AES_DECRYPT(str,key)		返回用密钥key对字符串str利用高级加密标准算法解密后的结果
-DECODE(str,key)		使用key作为密钥解密加密字符串str
-ENCRYPT(str,salt)		用关键词salt加密字符串str
-ENCODE(str,key)		使用key作为密钥加密字符串str结果是一个二进制字符串，它以BLOB类型存储
-MD5()		计算字符串str的MD5校验和
-PASSWORD(str)		返回字符串str的加密版本，这个加密过程是不可逆转的，和UNIX密码加密过程使用不同的算法。
-SHA()		计算字符串str的安全散列算法(SHA)
+:active		激活元素
+:focus		焦点元素
+:hover		鼠标悬停
+:link		未访问
+:visited		已访问
+:first-child		首子元素
+:lang		语言
 
 
 
@@ -25,7 +26,7 @@ let [
       objAlias
   ] = 
    [
-      "mysql.group", 
+      "select.element\t", 
     ";//",
     "${2:numObj}."
    ];

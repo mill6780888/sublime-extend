@@ -1,11 +1,12 @@
 <snippet>
 	<content><![CDATA[
-/* 列表样式 type position image */
-list-style:upper-alpha outside none;
+::selection { background: #e2eae2; }  
+::-moz-selection { background: #e2eae2; }  
+::-webkit-selection { background: #e2eae2; } 
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>list-style</tabTrigger>
+	<tabTrigger>selection</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.css,source.mcss</scope>
-	<description>定位</description>
+	<description>选中文本样式</description>
 </snippet>
