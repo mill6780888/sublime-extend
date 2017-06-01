@@ -4,13 +4,16 @@ let tplstr = `
 
 
 
-:active		激活元素
-:focus		焦点元素
-:hover		鼠标悬停
-:link		未访问
-:visited		已访问
-:first-child		首子元素
-:lang		语言
+concat(arrayX,arrayX,......,arrayX)	arr	合并数组
+join(separator)	str	数组转字符串
+pop()	item	弹出最后元素
+push(newelement1,newelement2,....,newelementX)	length	末尾压入元素
+reverse()		倒序
+shift()	item	弹出首元素
+slice(start,end)	newArr	从某个已有的数组返回选定的元素
+sort()		排序
+splice(index,howmany,item1,.....,itemX)	delItems	增删元素
+unshift(newelement1,newelement2,....,newelementX)	length	前部压入元素
 
 
 
@@ -21,14 +24,14 @@ let tplstr = `
 `;
 
 let [
-      modelName, 
+      modelName,
       commantTag,
       objAlias
-  ] = 
+  ] =
    [
-      "select.element\t", 
+      "array.",
     ";//",
-    "${2:numObj}."
+    "${2:arrObj}."
    ];
 
 
@@ -57,10 +60,10 @@ promiseVal.then(function(value) {
   return  new Promise(function(resolve, reject) {
     value.forEach((item)=>{
   	  handlerRow(item);
-  	
+
     });
   });
-  
+
 }, function(error) {
   console.warn(error);
 });
@@ -72,7 +75,7 @@ promiseVal.then(()=>{
 		handlerItem(item,index,obj);
 		});
 	});
-	
+
 });
 
 promiseVal.then((value)=>{
@@ -89,7 +92,8 @@ function handlerItem(item,index,value) {
 
 function getTitle(item,index,value) {
 	let apiName = /^(.*)\(/.test(item[0]);
-	return modelName+RegExp.$1+item[2];
+	// return modelName+RegExp.$1+item[2];
+	return modelName+RegExp.$1+"\\t"+item[2];
 }
 
 function getContent(item,index,value) {
@@ -106,6 +110,8 @@ function getContent(item,index,value) {
 	});
 	if(item[1]){
 		result+='${1:'+item[1]+'}='+objAlias;
+	}else{
+		result+=objAlias;
 	}
 	result+=content+commantTag+item[2];
 	return result;//item[0];
