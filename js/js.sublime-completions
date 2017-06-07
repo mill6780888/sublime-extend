@@ -17,9 +17,38 @@
       /**声明一个let的多变量*/
       { "trigger": "let-more", "contents": "let [\n      ${1:变量一}, \n      ${3:变量二}, \n      ${5:变量三}\n  ] = \n   [\n      ${2:值一}, \n    ${4:值二}, \n    ${6:值三}\n   ];\n" },
       { "trigger": "node-require", "contents": "require('${1:package}')" },
-      { "trigger": "Object.数据属性", "contents": "Object.defineProperty(${1:person}, \"${2:name}\", {\n    configurable: false,//不可设置,不可delete删除\n    enumerable: false,//不遍历\n    writable: false,//不可写,只读\n    value: \"mill\"\n});" },
-      { "trigger": "Object.访问器属性", "contents": "Object.defineProperty(book, \"year\", {\n    get: function () {//可读属性\n        return this._year;\n    },\n    set: function (newValue) {//可写\n        if (newValue > 2004) {//判断条件满足则写入\n            this._year = newValue;\n            this.edition += newValue - 2004;\n        }\n    },\n    configurable: false,//不可设置,不可delete删除\n enumerable:false//不遍历\n\n});" },
-      { "trigger": "Object.原型属性值", "contents": "Object.getOwnPropertyNames(Person.prototype);" },
-      { "trigger": "Object.原型属性值", "contents": "Object.keys(Person.prototype);" },
+      { "trigger": "Object.defineProperty\t数据属性", "contents": "Object.defineProperty(${1:person}, \"${2:name}\", {\n    configurable: false,//不可设置,不可delete删除\n    enumerable: false,//不遍历\n    writable: false,//不可写,只读\n    value: \"mill\"\n});" },
+      { "trigger": "Object.defineProperty\t访问器属性", "contents": "Object.defineProperty(book, \"year\", {\n    get: function () {//可读属性\n        return this._year;\n    },\n    set: function (newValue) {//可写\n        if (newValue > 2004) {//判断条件满足则写入\n            this._year = newValue;\n            this.edition += newValue - 2004;\n        }\n    },\n    configurable: false,//不可设置,不可delete删除\n enumerable:false//不遍历\n\n});" },
+      { "trigger": "Object.getOwnPropertyNames\t原型属性值", "contents": "Object.getOwnPropertyNames(Person.prototype);" },
+      { "trigger": "Object.keys\t原型属性值", "contents": "Object.keys(Person.prototype);" },
+		{ "trigger": "setInterval\t周期性事件", "contents": "setInterval(${1:callback},${2:5000});" },
+
+      { "trigger": "Object.const\t构造器", "contents": "${1:obj}.constructor;//构造器" },
+      { "trigger": "array.const\t数组长度", "contents": "${1:arr}.length;//数组长度" },
+      { "trigger": "Object.const\t原型", "contents": "${1:obj}.prototype;//原型" },
+
+      /*数组*/
+      { "trigger": "array.concat\t合并数组", "contents": "${1:arr}=${2:arrObj}.concat(${3:arrayX},${4:arrayX},${5:......},${6:arrayX});//合并数组" },
+
+      { "trigger": "array.join\t数组转字符串", "contents": "${1:str}=${2:arrObj}.join(${3:separator});//数组转字符串" },
+
+      { "trigger": "array.pop\t弹出最后元素", "contents": "${1:item}=${2:arrObj}.pop();//弹出最后元素" },
+
+      { "trigger": "array.push\t末尾压入元素", "contents": "${1:length}=${2:arrObj}.push(${3:newelement1},${4:newelement2},${5:....},${6:newelementX});//末尾压入元素" },
+
+      { "trigger": "array.reverse\t倒序", "contents": "${2:arrObj}.reverse();//倒序" },
+
+      { "trigger": "array.shift\t弹出首元素", "contents": "${1:item}=${2:arrObj}.shift();//弹出首元素" },
+
+      { "trigger": "array.slice\t截取数组", "contents": "${1:newArr}=${2:arrObj}.slice(${3:start},${4:end});//从某个已有的数组返回选定的元素" },
+
+      { "trigger": "array.sort\t排序", "contents": "${2:arrObj}.sort();//排序" },
+
+      { "trigger": "array.splice\t增删元素", "contents": "${1:delItems}=${2:arrObj}.splice(${3:index},${4:howmany},${5:item1},${6:.....},${7:itemX});//增删元素" },
+
+      { "trigger": "array.unshift\t前部压入元素", "contents": "${1:length}=${2:arrObj}.unshift(${3:newelement1},${4:newelement2},${5:....},${6:newelementX});//前部压入元素" },
+
+
+
    ]
 }
