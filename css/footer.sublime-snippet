@@ -1,0 +1,22 @@
+<snippet>
+	<content><![CDATA[
+#footer {/*固定底部*/
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:${1:32}px;
+   width:100%;
+   background:${2:#333};
+}
+/* IE 6 */
+* html #footer {/*固定底部兼容IE6*/
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>footer</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>固定底部</description>
+</snippet>

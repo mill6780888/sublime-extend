@@ -1,0 +1,21 @@
+<snippet>
+	<content><![CDATA[
+.textoverflow{/*文本溢出省略*/
+    display:block;
+    width:${1:120}px;
+    margin: 0px 0px 0px 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    float: left;
+    -o-text-overflow: ellipsis;     /* for Opera */
+    text-overflow: ellipsis;        /* for IE */
+}
+.textoverflow:after{ content: "..."; }/* for Firefox */
+@media all and (min-width: 0px){ .textoverflow:after{ content:""; }/* for Opera */ }
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>textoverflow</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>文本溢出省略号</description>
+</snippet>

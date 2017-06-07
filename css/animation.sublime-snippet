@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+animation:${1:mymove} ${2:5s} ${3:infinite};
+-moz-animation:${1:mymove} ${2:5s} ${3:infinite}; /* Firefox */
+-webkit-animation:${1:mymove} ${2:5s} ${3:infinite}; /* Safari and Chrome */
+-o-animation:${1:mymove} ${2:5s} ${3:infinite}; /* Opera */
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>animation</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.css,source.mcss</scope>
+	<description>动画</description>
+</snippet>

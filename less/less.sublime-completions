@@ -1,27 +1,10 @@
 {
-	"scope": "source.css,source.mcss",
+	"scope": "source.css.less,source.less",
 
-	"completions": [{
-		"trigger": "transition.linear\t线性过渡",
-		"contents": "linear"
-	}, {
-		"trigger": "transition.ease\t平滑过渡",
-		"contents": "ease"
-	}, {
-		"trigger": "transition.ease-in\t由慢到快",
-		"contents": "ease-in"
-	}, {
-		"trigger": "transition.ease-out\t 由快到慢",
-		"contents": "ease-out"
-	}, {
-		"trigger": "important\t 提高优先级",
-		"contents": "!important"
-	}, {
-		"trigger": "opacity\t 透明度",
-		"contents": "opacity:${1:0.5};"
-	}, 
+	"completions": [
 	/*伪元素*/
 	{ "trigger": "select.element\t激活元素", "contents": "${1:a}:active" },
+	{ "trigger": "after\t伪类", "contents": "&:after {\nTODO\n}" },
 	{ "trigger": "select.element\t焦点元素", "contents": "${1:a}:focus" },
 	{ "trigger": "select.element\t鼠标悬停", "contents": "${1:a}:hover" },
 	{ "trigger": "select.element\t未访问", "contents": "${1:a}:link" },
