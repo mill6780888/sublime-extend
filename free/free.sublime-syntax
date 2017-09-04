@@ -2,19 +2,19 @@
 ---
 # See http://www.sublimetext.com/docs/3/syntax.html
 file_extensions:
-  - js
-scope: source.gulp source.js
+  - ec
+scope: text.free
 contexts:
   main:
     # Strings begin and end with quotes, and use backslashes as an escape
     # character
     - match: '"'
-      scope: punctuation.definition.string.begin.py
+      scope: string
       push: double_quoted_string
 
     # Comments begin with a '//' and finish at the end of the line
-    - match: '//'
-      scope: punctuation.definition.comment.py
+    - match: '<#--.*-->'
+      scope: comment
       push: line_comment
 
     # Keywords are if, else for and while.
@@ -22,25 +22,25 @@ contexts:
     # strings in YAML. When using single quoted strings, only single quotes
     # need to be escaped: this is done by using two single quotes next to each
     # other.
-    - match: '\b(and|exec|not|assert|finally|or|break|for|pass|class|from|print|continue|global|raise|def|if|return|del|import|try|elif|in|while|else|is|with|except|lambda|yield)\b'
-      scope: keyword.control.py
+    - match: '\b(if|else|for|while)\b'
+      scope: keyword.control.free
 
     # Numbers
     - match: '\b(-)?[0-9.]+\b'
-      scope: constant.numeric.py # Numbers
-
-    - match: '\b\w+\b='
-      scope: variable
+      scope: constant.numeric.free
+  
+    - match: 'mill'
+      scope: constant.numeric.free
 
   double_quoted_string:
-    - meta_scope: string.quoted.double.py
+    - meta_scope: string.quoted.double.free
     - match: '\\.'
-      scope: constant.character.escape.py
+      scope: constant.character.escape.free
     - match: '"'
-      scope: punctuation.definition.string.end.py
+      scope: punctuation.definition.string.end.free
       pop: true
 
   line_comment:
-    - meta_scope: comment.line.py
+    - meta_scope: comment.line.free
     - match: $
       pop: true

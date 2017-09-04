@@ -1,0 +1,135 @@
+{
+	"scope": "text.free",
+
+	"completions": [
+		/**word**/
+		{
+			"trigger": "func.date\t日期",
+			"contents": "\\${${1:dateval}?date}"
+		}, {
+			"trigger": "func.time\t时间",
+			"contents": "\\${${1:dateval}?time}"
+		}, {
+			"trigger": "func.datetime\t时间",
+			"contents": "\\${${1:dateval}?datetime}"
+		},
+
+
+		{
+			"trigger": "derect.assignsqu\t定义序列",
+			"contents": "<#assign ${1:name} = [${2:vals...}]>"
+		}, {
+			"trigger": "derect.assignmap\t定义map",
+			"contents": "<#assign ${1:userMap}={\"1\":\"刘德华\",\"2\":\"张学友\"}/>"
+		}, {
+			"trigger": "derect.assignval\t定义变量",
+			"contents": "<#assign ${1:name}=\"${2:value}\">"
+		}, {
+			"trigger": "derect.assigndate\t定义日期",
+			"contents": "<#assign d=\"2007-08-09\"?date(\"yyyy-MM-dd\")>"
+		}, {
+			"trigger": "derect.global\t定义全局变量",
+			"contents": "<#assign ${1:name}=\"${2:value}\">"
+		}, {
+			"trigger": "derect.assignmultline\t定义多行变量",
+			"contents": "<#assign ${1:name}>${2:value}</#assign>"
+		}, {
+			"trigger": "derect.try\t异常替换",
+			"contents": "<#--如果出现错误则使用替换代码-->\n<#attempt><#--正常代码-->\n  ${1:code}\n<#recover><#--替换代码-->\n  ${2:替换代码}\n</#attempt>"
+		}, {
+			"trigger": "derect.compress\t压缩多余空间",
+			"contents": "<#--压缩多余空间-->\n<#compress>\n ${2:code}\n</#compress>"
+		}, {
+			"trigger": "derect.escape\t统一函数运算",
+			"contents": "<#--对吧包含的所有变量进行函数运算-->\n <#escape x as x?date>\n  ${1:values}\n</#escape>"
+		}, {
+			"trigger": "derect.function\t定义方法",
+			"contents": "<#--方法定义-->\n<#function avg x y=20>\n  <#return (x + y) / 2>\n</#function>\n<#--调用方法如下-->\n<#--\\${avg(10, 20)}-->"
+		},{
+			"trigger": "derect.macro\t自定义指令",
+			"contents": "<#--自定义指令-->\n<#macro avg x y=20>\n  \\${x}---\\${y}\n<#nested \"我的一些你内容\"/>\n</#macro>\n<#--调用方法如下-->\n<#--<@avg x=12;n>\\${n}</@avg>-->"
+		}, {
+			"trigger": "derect.if\t条件分支",
+			"contents": "<#if ${1:val} == 1>\n  ${2:code}\n<#elseif ${1:val} == 2>\n  ${3:code}\n<#else>\n  ${4:code}\n</#if>"
+		}, {
+			"trigger": "derect.import\t导入宏",
+			"contents": "<#import \"test.tpl\" as my>"
+		}, {
+			"trigger": "derect.include\t导入模板",
+			"contents": "<#include ${1:path}>"
+		}, {
+			"trigger": "derect.listsimple\t简单迭代",
+			"contents": "<#list ${1:sequence} as ${2:item}>\n    ${2:item}<#sep>,\n<#else>\n    ${4:没有元素的时候执行这里}\n</#list>\n<#--支持<#break>-->"
+		},{
+			"trigger": "derect.listcount\t计次循环",
+			"contents": "<#list ${1:1..100} as ${2:item}>\n    ${2:item}<#sep>,\n<#else>\n    ${4:没有元素的时候执行这里}\n</#list>\n<#--支持<#break>-->"
+		},{
+			"trigger": "derect.listmap\t简单map",
+			"contents": "<#list ${1:userMap}?keys as key>\n  key:${key}--value:\\${${1:userMap}[\"\\${key}\"]}\n</#list>"
+		}, {
+			"trigger": "derect.noparse\t不解析代码",
+			"contents": "<#noparse>\n${1:不解析的代码}</#noparse>"
+		}, {
+			"trigger": "derect.stop\t抛出异常",
+			"contents": "<#stop ${1:message}>"
+		},{
+			"trigger": "derect.switch\t分支",
+			"contents": "<#switch ${1:value}>\n  <#case ${2:refValue1}>\n    ${3:code}\n    <#break>\n  <#default>\n     ${4:code}\n</#switch>"
+		},{
+			"trigger": "derect.now\t当前时间",
+			"contents": "\\${.now?string(\"[yyyy-MM-dd HH:mm:ss]\")}"}
+		,{
+			"trigger": "derect.null\t空值处理",
+			"contents": "\\${(${1:aa})!\"${2:没有改变量}\"}"
+		} ,{
+			"trigger": "derect.ifnull\t空值判断",
+			"contents": "<#if (${1:aa.bb}) ?? >\n  不为空\n<#else>\n  为空\n</#if>"
+		} ,{
+			"trigger": "derect.nulls\t空值string",
+			"contents": "\\${(${1:aa.bb})???string}"
+		} ,
+/*函数*/
+
+		{
+			"trigger": "func.cap\t首字母大写",
+			"contents": "\\${${1:val}?capitalize}"
+		} ,{
+			"trigger": "func.contains\t判断包含",
+			"contents": "<#if ${1:val}?contains(${2:\"ice\"})>It contains ${2:\"ice\"}</#if>"
+		} ,{
+			"trigger": "func.ends_with\t判断结尾",
+			"contents": "<#if ${1:val}?ends_with(${2:\"ice\"})>It ends with ${2:\"ice\"}</#if>"
+		} ,{
+			"trigger": "func.matches\t正则判断",
+			"contents": "<#if ${1:val}?matches(${2:\"ice\"})>It matches ${2:\"ice\"}</#if>"
+		} ,{
+			"trigger": "func.groups\t正则分组",
+			"contents": "<#assign res = ${1:\"John Doe\"}?matches(r${2:\"(\\w+) (\\w+)\"})>\n<#if res> <#-- 可以获取最近匹配结果 -->\n  First name: \\${res?groups[1]}\n  Second name: \\${res?groups[2]}\n</#if>"
+		} ,{
+			"trigger": "func.replace\t正则分组",
+			"contents": "\\${${1:\"this is a car acarus\"}?replace(${2:\"car\"}, ${3:\"bulldozer\"})}"
+		} ,{
+			"trigger": "func.ensure_ends_with\t条件追加",
+			"contents": "\\${\"aaa/foo\"?ensure_ends_with(\"/\")}"
+		} ,{
+			"trigger": "func.uncap_first\t首字母小写",
+			"contents": "uncap_first"
+		} ,{
+			"trigger": "func.cap_first\t首字母大写",
+			"contents": "cap_first"
+		} ,{
+			"trigger": "func.trim\t去空格",
+			"contents": "trim"
+		} ,{
+			"trigger": "func.split\t字符串切割",
+			"contents": "split"
+		} ,{
+			"trigger": "func.upper_case\t转大写",
+			"contents": "upper_case"
+		} ,{
+			"trigger": "func.left_pad\t填空",
+			"contents": "left_pad"
+		} ,
+
+	]
+}

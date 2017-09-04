@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+<#list ${1:sequence} as ${2:item}>
+    \\${${2:item}}
+<#else>
+    没有元素的时候执行这里
+</#list>
+]]></content>
+    <tabTrigger>list</tabTrigger>
+    <scope>text.free</scope>
+    <description>容器迭代</description>
+</snippet>
