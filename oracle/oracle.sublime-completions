@@ -1,0 +1,13 @@
+{
+	"scope": "source.plsql.oracle",
+
+	"completions": [
+	/*伪元素*/
+	{ "trigger": "constraint", "contents": "constraint" },
+	{ "trigger": "table", "contents": "table" },
+	{ "trigger": "alter", "contents": "alter" },
+	{ "trigger": "references", "contents": "references" },
+	{ "trigger": "constraint.foreign\t创建外键", "contents": "alter table ${1:tableName}\nadd constraint ${1:tableName}_${2:columnName}_fk foreign key(${2:columnName})\nreferences ${3:targetTable}(${4:targetColumn})\non delete set null;--cascade" },
+	
+	]
+}

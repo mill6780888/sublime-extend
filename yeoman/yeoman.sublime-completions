@@ -13,7 +13,7 @@
       { "trigger": "yeoman-expand", "contents": "{\n	type: 'expand',\n	name: '${1:yourname}',\n	message: '${2:请问你叫什么名字?}',\n	choices: [{\n		value: '${3:value}',\n		name: '${4:选项}',\n		checked: true,\n		key:'a'\n	},\n	{\n		value: '${5:value}',\n		name: '${6:选项}',\n		checked: false,\n		key: 'b'\n	}\n\n	]\n}\n" },
       { "trigger": "yeoman-hasMod", "contents": "var hasMod = function(mod) {\n	return props.${1:model}.indexOf(mod) !== -1;\n};\n\n" },
       { "trigger": "yeoman-constructor", "contents": "constructor: function () {\n	generators.Base.apply(this, arguments);\n\n	// This makes `appname` a required argument.\n	this.argument('appname', { type: String, required: true });\n	// And you can then access it later on this way; e.g. CamelCased\n	this.appname = _.camelCase(this.appname);\n}" },
-      { "trigger": "yeoman-options", "contents": "// This method adds support for a `--coffee` flag\nthis.option('${1:coffee}');\n// And you can then access it later on this way; e.g.\nthis.scriptSuffix = (this.options.${1:coffee} ? \".coffee\": \".js\");" },
+      { "trigger": "yeoman-options", "contents": "this.option('coffee',\n{\n  desc:\"是不是使用coffee\",\n  alias:\"c\",\n  type:Boolean,//Boolean | String | Number\n  default:false,\n  hide:false\n});\nthis.scriptSuffix = (this.options.coffee ? \".coffee\": \".js\"); " },
       { "trigger": "yeoman-npmInstall", "contents": "this.npmInstall(['${1:npmname}'], { 'saveDev': true });" },
       { "trigger": "yeoman-spawnCommand", "contents": "this.spawnCommand('composer', ['install']);" },
       { "trigger": "yeoman-spawnCommandSync", "contents": "this.spawnCommandSync('composer', ['install']);" },

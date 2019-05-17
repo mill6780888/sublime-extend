@@ -1,0 +1,19 @@
+<snippet>
+	<content><![CDATA[
+--set serveroutput on 允许输出
+DECLARE
+/*  声明部分 :  在此声明 PL/SQL 用到的变量 , 类型及游标，以及局部的存储过程和函数 */
+BEGIN
+/* 执行部分 : 过程及 SQL  语句 ,  即程序的主要部分 */
+dbms_output.put_line('Hello World!');
+--EXCEPTION
+/*  执行异常部分 :  错误处理 */
+END;
+/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>plsql.block</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.plsql.oracle</scope>
+	<description>语句块</description>
+</snippet>

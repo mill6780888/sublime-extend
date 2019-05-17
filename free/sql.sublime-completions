@@ -1,0 +1,43 @@
+{
+	"scope": "source.sql",
+
+	"completions": [
+		/**key 关键字**/
+		{
+			"trigger": "alter",
+			"contents": "alter"
+		},{
+			"trigger": "create",
+			"contents": "create"
+		},{
+			"trigger": "alter",
+			"contents": "alter"
+		},{
+			"trigger": "drop",
+			"contents": "drop"
+		},{
+			"trigger": "grant",
+			"contents": "grant"
+		},{
+			"trigger": "revoke",
+			"contents": "revoke"
+		},{
+			"trigger": "sequence",
+			"contents": "sequence"
+		},{
+			"trigger": "primary",
+			"contents": "primary"
+		},{
+			"trigger": "constraint",
+			"contents": "constraint"
+		},
+		{
+			"trigger": "oracle.foreign",
+			"contents": "alter table ${1:table}\nadd constraint ${1:table}_${2:column}_fk foreign key(${2:column})\nreferences ${3:target}(${4:targetColumn})\non delete set null --cascade"
+		},{
+			"trigger": "oracle.view",
+			"contents": "--创建视图\ncreate or replace ${1:viewName}\nas\n(${2:sql})"
+		},
+
+	]
+}

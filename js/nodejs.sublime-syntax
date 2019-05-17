@@ -3,18 +3,18 @@
 # See http://www.sublimetext.com/docs/3/syntax.html
 file_extensions:
   - js
-scope: source.nodejs source.js
+scope:  source.js
 contexts:
   main:
     # Strings begin and end with quotes, and use backslashes as an escape
     # character
     - match: '"'
-      scope: punctuation.definition.string.begin.nodejs
+      scope: punctuation.definition.string.begin.js
       push: double_quoted_string
 
     # Comments begin with a '//' and finish at the end of the line
     - match: '//'
-      scope: punctuation.definition.comment.nodejs
+      scope: punctuation.definition.comment.js
       push: line_comment
 
     # Keywords are if, else for and while.
@@ -23,21 +23,21 @@ contexts:
     # need to be escaped: this is done by using two single quotes next to each
     # other.
     - match: '\b(if|else|for|while)\b'
-      scope: keyword.control.nodejs
+      scope: keyword.control.js
 
     # Numbers
     - match: '\b(-)?[0-9.]+\b'
-      scope: constant.numeric.nodejs
+      scope: constant.numeric.js
 
   double_quoted_string:
-    - meta_scope: string.quoted.double.nodejs
+    - meta_scope: string.quoted.double.js
     - match: '\\.'
-      scope: constant.character.escape.nodejs
+      scope: constant.character.escape.js
     - match: '"'
-      scope: punctuation.definition.string.end.nodejs
+      scope: punctuation.definition.string.end.js
       pop: true
 
   line_comment:
-    - meta_scope: comment.line.nodejs
+    - meta_scope: comment.line.js
     - match: $
       pop: true
